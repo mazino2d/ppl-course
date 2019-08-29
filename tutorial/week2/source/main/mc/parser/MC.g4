@@ -28,7 +28,8 @@ fragment DIGIT: [0-9];
 fragment LOWCASE: [a-z];
 fragment NEGATIVE: '-';
 fragment DOT: '.';
-fragment QUOTE: '\'';
+fragment SINGLEQUOTE: '\'';
+fragment DOUBLEQUOTE: '\'\'';
 fragment EXPONENT: [eE] NEGATIVE? DIGIT+;
  
 program: mctype 'main' LB RB LP body? RP EOF ;
@@ -55,7 +56,7 @@ FLOATLIT
 	| DIGIT+ EXPONENT
 	;
 
-STRLIT : QUOTE ('\'\''| ~('\''))* QUOTE;
+STRLIT : SINGLEQUOTE (DOUBLEQUOTE | ~('\''))*? SINGLEQUOTE;
 
 LB: '(' ;
 
