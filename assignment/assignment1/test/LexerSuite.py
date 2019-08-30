@@ -11,3 +11,10 @@ class LexerSuite(unittest.TestCase):
     def test_integer(self):
         """test integers"""
         self.assertTrue(TestLexer.checkLexeme("123a123","123,a,123,<EOF>",104))
+    def test_float(self):
+        """test float"""
+    def test_string(self):
+        """test strings"""
+    def test_boolean(self):
+        """test booleans"""
+
