@@ -7,7 +7,9 @@ RUN apt-get update
 RUN apt-get install -y  \
     python3 python3-pip \
     openjdk-8-jdk       \
-    vim wget htop git
+    scala               \
+    fpc                 \
+    vim git
 
 RUN pip3 install antlr4-python3-runtime
 
