@@ -4,20 +4,20 @@ grammar MC;
 from lexererr import *
 }
 
-@lexer::member {
+@lexer::members {
 def emit(self):
     tk = self.type
-    if tk == UNCLOSE_STRING:       
-        result = super.emit();
+    if tk == self.UNCLOSE_STRING:       
+        result = super().emit();
         raise UncloseString(result.text);
-    elif tk == ILLEGAL_ESCAPE:
-        result = super.emit();
+    elif tk == self.ILLEGAL_ESCAPE:
+        result = super().emit();
         raise IllegalEscape(result.text);
-    elif tk == ERROR_CHAR:
-        result = super.emit();
+    elif tk == self.ERROR_CHAR:
+        result = super().emit();
         raise ErrorToken(result.text); 
     else:
-        return super.emit();
+        return super().emit();
 }
 
 options{
@@ -42,14 +42,14 @@ fragment Lowcase: [a-z] ;
 fragment Uppercase: [A-Z] ;
 fragment Letter: Lowcase | Uppercase;
 
+fragment Character: ~[\b\f\r\n\t"\\] | Escape;
+fragment Escape: '\\' [bfrnt"\\];
+fragment IllegalEscape: '\\' ~[bfrnt"\\];
+
 fragment Dot: '.' ;
 fragment Underscore: '_' ;
 
 fragment Exponent: [eE] '-'? Digit+ ;
-
-//------------------------------ Identifier ------------------------------//
-
-ID: (Letter|Underscore) (Letter|Underscore|Digit)* ;
 
 //------------------------------ Keyword ------------------------------//
 
@@ -58,7 +58,6 @@ INTTYPE: 'int' ;
 FLOATTYPE: 'float' ;
 STRINGTYPE: 'string' ;
 VOIDTYPE: 'void' ;
-
 
 DO: 'do' ;
 WHILE: 'while' ;
@@ -74,6 +73,10 @@ RETURN: 'return' ;
 
 TRUE: 'true' ;
 FALSE: 'false' ;
+
+//------------------------------ Identifier ------------------------------//
+
+ID: (Letter|Underscore) (Letter|Underscore|Digit)* ;
 
 //------------------------------ Keyword ------------------------------//
 
@@ -122,12 +125,32 @@ FLOATLIT
 
 BOOLEANLIT: TRUE|FALSE ;
 
-STRINGLIT: ; 
-// TODO 
-// ? \n \b \a ... is the token ????
-// 
+STRINGLIT: '"'  Character* '"'
+{
+    temp = str(self.test)
+    self.test = temp[1:-1]
+}; 
+
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
-ERROR_CHAR: .;
-UNCLOSE_STRING: .;
-ILLEGAL_ESCAPE: .;
+UNCLOSE_STRING: '"' Character* ( [\b\t\n\f\r"'\\] | EOF )
+{
+    esc = ['\b', '\t', '\n', '\f', '\r', '"', '\\']
+    temp = str(self.test)
+
+    if temp[-1] in esc:
+        raise UncloseString(temp[1:-1])
+    else :
+        raise UncloseString(temp[1:])
+};
+
+ILLEGAL_ESCAPE: '"' Character* IllegalEscape
+{
+    temp = str(self.test)
+    raise IllegallEscape(temp[1:])
+};
+
+ERROR_CHAR: .
+{
+    raise ErrorToken(self.text)
+};
