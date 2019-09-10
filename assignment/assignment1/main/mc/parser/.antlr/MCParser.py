@@ -7,7 +7,7 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\62")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\64")
         buf.write("(\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
         buf.write("\3\2\3\2\3\2\5\2\23\n\2\3\2\3\2\3\2\3\3\3\3\3\4\3\4\3")
         buf.write("\4\3\5\3\5\5\5\37\n\5\3\6\3\6\3\6\5\6$\n\6\3\6\3\6\3\6")
@@ -49,8 +49,8 @@ class MCParser ( Parser ):
                       "MOD", "NOT", "OR", "AND", "EQUAL", "NOT_EQUAL", "LT", 
                       "GT", "LE", "GE", "ASSIGN", "LB", "RB", "LP", "RP", 
                       "LSB", "RSB", "COMA", "SEMI", "INTLIT", "FLOATLIT", 
-                      "BOOLEANLIT", "STRINGLIT", "WS", "UNCLOSE_STRING", 
-                      "ILLEGAL_ESCAPE", "ERROR_CHAR" ]
+                      "BOOLEANLIT", "STRINGLIT", "CMTLINE", "CMTBLOCK", 
+                      "WS", "UNCLOSE_STRING", "ILLEGAL_ESCAPE", "ERROR_CHAR" ]
 
     RULE_program = 0
     RULE_mctype = 1
@@ -105,10 +105,12 @@ class MCParser ( Parser ):
     FLOATLIT=42
     BOOLEANLIT=43
     STRINGLIT=44
-    WS=45
-    UNCLOSE_STRING=46
-    ILLEGAL_ESCAPE=47
-    ERROR_CHAR=48
+    CMTLINE=45
+    CMTBLOCK=46
+    WS=47
+    UNCLOSE_STRING=48
+    ILLEGAL_ESCAPE=49
+    ERROR_CHAR=50
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)

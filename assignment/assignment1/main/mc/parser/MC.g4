@@ -20,65 +20,65 @@ def emit(self):
         return super().emit();
 }
 
-options{
-	language=Python3;
+options {
+	language = Python3;
 }
 
-program  : mctype 'main' LB RB LP body? RP EOF ;
+program: mctype 'main' LB RB LP body? RP EOF;
 
-mctype: INTTYPE | VOIDTYPE ;
+mctype: INTTYPE | VOIDTYPE;
 
 body: funcall SEMI;
 
-exp: funcall | INTLIT ;
+exp: funcall | INTLIT;
 
-funcall: ID LB exp? RB ;
+funcall: ID LB exp? RB;
 
 //------------------------------ Fragment ------------------------------//
 
-fragment Digit: [0-9] ;
+fragment Digit: [0-9];
 
-fragment Lowcase: [a-z] ;
-fragment Uppercase: [A-Z] ;
+fragment Lowcase: [a-z];
+fragment Uppercase: [A-Z];
 fragment Letter: Lowcase | Uppercase;
 
 fragment Character: ~[\b\f\r\n\t"\\] | Escape;
 fragment Escape: '\\' [bfrnt"\\];
-fragment IllegalEscape: '\\' ~[bfrnt"\\];
+fragment IllegalEscape: '\\' ~[bfrnt"\\] ;
 
-fragment Dot: '.' ;
-fragment Underscore: '_' ;
+fragment Dot: '.';
+fragment Underscore: '_';
 
-fragment Exponent: [eE] '-'? Digit+ ;
+fragment Exponent: [eE] '-'? Digit+;
 
 //------------------------------ Keyword ------------------------------//
 
-BOOLEANTYPE: 'boolean' ;
-INTTYPE: 'int' ;
-FLOATTYPE: 'float' ;
-STRINGTYPE: 'string' ;
-VOIDTYPE: 'void' ;
+BOOLEANTYPE: 'boolean';
+INTTYPE: 'int';
+FLOATTYPE: 'float';
+STRINGTYPE: 'string';
+VOIDTYPE: 'void';
 
-DO: 'do' ;
-WHILE: 'while' ;
-FOR: 'for' ;
+DO: 'do';
+WHILE: 'while';
+FOR: 'for';
 
-BREAK: 'break' ;
-CONTINUE: 'continue' ;
+BREAK: 'break';
+CONTINUE: 'continue';
 
-IF: 'if' ;
-ELSE: 'else' ;
+IF: 'if';
+ELSE: 'else';
 
-RETURN: 'return' ;
+RETURN: 'return';
 
-TRUE: 'true' ;
-FALSE: 'false' ;
+TRUE: 'true';
+FALSE: 'false';
 
 //------------------------------ Identifier ------------------------------//
 
-ID: (Letter|Underscore) (Letter|Underscore|Digit)* ;
+ID: (Letter | Underscore) (Letter | Underscore | Digit)*;
 
-//------------------------------ Keyword ------------------------------//
+//------------------------------ Operator ------------------------------//
 
 ADD: '+';
 SUB: '-';
@@ -101,42 +101,45 @@ ASSIGN: '=';
 
 //------------------------------ Separator ------------------------------//
 
-LB: '(' ;
-RB: ')' ;
+LB: '(';
+RB: ')';
 
-LP: '{' ;
-RP: '}' ;
+LP: '{';
+RP: '}';
 
-LSB: '[' ;
-RSB: ']' ;
+LSB: '[';
+RSB: ']';
 
-COMA: ',' ;
-SEMI: ';' ;
+COMA: ',';
+SEMI: ';';
 
 //------------------------------ Literal ------------------------------//
 
-INTLIT: '0' | [1-9] [0-9]+ ;
+INTLIT: [0-9]+;
 
-FLOATLIT
-	: Digit+ Dot (Digit)* Exponent?
+FLOATLIT:
+	Digit+ Dot (Digit)* Exponent?
 	| Digit* Dot (Digit)+ Exponent?
-	| Digit+ Exponent
-	;
+	| Digit+ Exponent;
 
-BOOLEANLIT: TRUE|FALSE ;
+BOOLEANLIT: TRUE | FALSE;
 
-STRINGLIT: '"'  Character* '"'
-{
-    temp = str(self.test)
-    self.test = temp[1:-1]
-}; 
+STRINGLIT: '"' Character* '"' {
+    temp = str(self.text)
+    self.text = temp[1:-1]
+};
 
-WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
+//------------------------------ Comment ------------------------------//
 
-UNCLOSE_STRING: '"' Character* ( [\b\t\n\f\r"'\\] | EOF )
-{
+CMTLINE: '//' ~[\n\r]* -> skip;
+CMTBLOCK: '/''*' .*? '*''/' -> skip;
+WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
+
+//------------------------------ Error token ------------------------------//
+
+UNCLOSE_STRING: '"' Character* ([\b\t\n\f\r"'\\] | EOF) {
     esc = ['\b', '\t', '\n', '\f', '\r', '"', '\\']
-    temp = str(self.test)
+    temp = str(self.text)
 
     if temp[-1] in esc:
         raise UncloseString(temp[1:-1])
@@ -144,13 +147,12 @@ UNCLOSE_STRING: '"' Character* ( [\b\t\n\f\r"'\\] | EOF )
         raise UncloseString(temp[1:])
 };
 
-ILLEGAL_ESCAPE: '"' Character* IllegalEscape
-{
-    temp = str(self.test)
-    raise IllegallEscape(temp[1:])
+ILLEGAL_ESCAPE:'"' Character* IllegalEscape {
+    temp = str(self.text)
+    raise IllegalEscape(temp[1:])
 };
 
-ERROR_CHAR: .
+ERROR_CHAR:.
 {
     raise ErrorToken(self.text)
 };
