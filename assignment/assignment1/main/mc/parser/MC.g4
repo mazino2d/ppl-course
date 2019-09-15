@@ -24,16 +24,6 @@ options {
 	language = Python3;
 }
 
-program: mctype 'main' LB RB LP body? RP EOF;
-
-mctype: INTTYPE | VOIDTYPE;
-
-body: funcall SEMI;
-
-exp: funcall | INTLIT;
-
-funcall: ID LB exp? RB;
-
 //------------------------------ Fragment ------------------------------//
 
 fragment Digit: [0-9];
@@ -51,6 +41,59 @@ fragment Underscore: '_';
 
 fragment Exponent: [eE] '-'? Digit+;
 
+//------------------------------ PARSER ------------------------------//
+//------------------------------------------------------------------------//
+
+program: (var_declare | func_declare)+ EOF;
+
+var_declare: prim_type manyvar SEMI;
+manyvar: var(COMA manyvar)*;
+var: ID (LSB INTLIT RSB)?;
+prim_type: BOOLEANTYPE | INTTYPE
+                | FLOATTYPE |STRINGTYPE;
+
+func_declare: func_type ID LB paralist RB blockstmt;
+paralist: (paradcl (COMA paradcl)*)?;
+paradcl: prim_type para;
+para: ID (LSB RSB)?;
+func_type: prim_type | VOIDTYPE | arraytype;
+arraytype: prim_type LSB RSB;
+
+blockstmt: LP (var_declare | stmt)* RP;
+
+stmt: blockstmt | if_stmt
+    | while_stmt  | for_stmt
+    | break_stmt  | continue_stmt
+    | return_stmt | expr_stmt
+    ;
+
+if_stmt: IF LB expr_stmt LB stmt (ELSE stmt)?;
+while_stmt: DO stmt+ WHILE expr_stmt SEMI;
+for_stmt: FOR LB expr_stmt expr_stmt expr_stmt RB stmt;
+break_stmt: BREAK SEMI;
+continue_stmt: CONTINUE SEMI;
+return_stmt: RETURN (expr_stmt)? SEMI;
+expr_stmt: expr0 SEMI;
+
+expr0: expr1 ASSIGN expr0 | expr1;
+expr1: expr1 OR expr2 | expr2;
+expr2: expr2 AND expr3 | expr3;
+expr3: expr4 (EQ | NE) expr4 | expr4;
+expr4: expr5 (LT | LE | GT | GE) expr5 | expr5;
+expr5: expr5 (ADD | SUB) expr6 | expr6;
+expr6: expr6 (MUL | DIV | MOD) expr7 | expr7;
+expr7: (NOT | SUB) expr7 | expr8;
+expr8: expr8 LSB  expr8 RSB | expr9;
+expr9: LB expr0 RB | operands;
+
+operands: INTLIT   | BOOLEANLIT | ID
+            | FLOATLIT | STRINGLIT | calfunc;
+
+calfunc: ID LB arglist RB;
+arglist: (expr0 (COMA expr0)*)?;
+
+//------------------------------ LEXER --------------------------------//
+//-------------------------------------------------------------------------//
 //------------------------------ Keyword ------------------------------//
 
 BOOLEANTYPE: 'boolean';
@@ -90,8 +133,8 @@ NOT: '!';
 OR: '||';
 AND: '&&';
 
-EQUAL: '==';
-NOT_EQUAL: '!=';
+EQ: '==';
+NE: '!=';
 LT: '<';
 GT: '>';
 LE: '<=';
@@ -113,14 +156,13 @@ RSB: ']';
 COMA: ',';
 SEMI: ';';
 
-//------------------------------ Literal ------------------------------//
+//-------------------------------- Literal --------------------------------//
 
-INTLIT: [0-9]+;
+INTLIT: Digit+;
 
-FLOATLIT:
-	Digit+ Dot (Digit)* Exponent?
-	| Digit* Dot (Digit)+ Exponent?
-	| Digit+ Exponent;
+FLOATLIT: Digit+ Dot (Digit)* Exponent?
+	    | Digit* Dot (Digit)+ Exponent?
+	    | Digit+ Exponent;
 
 BOOLEANLIT: TRUE | FALSE;
 
@@ -131,13 +173,13 @@ STRINGLIT: '"' Character* '"' {
 
 //------------------------------ Comment ------------------------------//
 
-CMTLINE: '//' ~[\n\r]* -> skip;
+CMTLINE: '//' ~[\n\r\f]* -> skip;
 CMTBLOCK: '/''*' .*? '*''/' -> skip;
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 
 //------------------------------ Error token ------------------------------//
 
-UNCLOSE_STRING: '"' Character* ([\b\t\n\f\r"'\\] | EOF) {
+UNCLOSE_STRING: '"' Character* ([\b\t\n\f\r"\\] | EOF) {
     esc = ['\b', '\t', '\n', '\f', '\r', '"', '\\']
     temp = str(self.text)
 

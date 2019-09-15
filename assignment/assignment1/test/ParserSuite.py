@@ -11,7 +11,7 @@ class ParserSuite(unittest.TestCase):
     def test_more_complex_program(self):
         """More complex program"""
         input = """int main () {
-            putIntLn(4);
+            for ( i = 0; i < n; i = i +1 ) {printf();}
         }"""
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,202))
@@ -21,3 +21,8 @@ class ParserSuite(unittest.TestCase):
         input = """int main( {}"""
         expect = "Error on line 1 col 10: {"
         self.assertTrue(TestParser.checkParser(input,expect,203))
+
+    def test_wrong_miss_array_size(self):
+        input = """ int a[]; """
+        expect = "Error on line 1 col 7: ]"
+        self.assertTrue(TestParser.checkParser(input,expect,204))
