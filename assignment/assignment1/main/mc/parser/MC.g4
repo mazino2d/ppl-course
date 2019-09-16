@@ -43,21 +43,29 @@ fragment Exponent: [eE] '-'? Digit+;
 
 //------------------------------ PARSER ------------------------------//
 //------------------------------------------------------------------------//
+//------------------------------ Program ------------------------------//
 
 program: (var_declare | func_declare)+ EOF;
 
-var_declare: prim_type manyvar SEMI;
-manyvar: var(COMA manyvar)*;
-var: ID (LSB INTLIT RSB)?;
-prim_type: BOOLEANTYPE | INTTYPE
-                | FLOATTYPE |STRINGTYPE;
+//------------------------ Variable Declaration ----------------------//
 
-func_declare: func_type ID LB paralist RB blockstmt;
-paralist: (paradcl (COMA paradcl)*)?;
+var_declare: prim_type varlist SEMI;
+prim_type: BOOLEANTYPE | INTTYPE
+                | FLOATTYPE | STRINGTYPE;
+varlist: var (COMA varlist)*;
+var: ID (LSB INTLIT RSB)?;
+
+//------------------------ Function Declaration ----------------------//
+
+func_declare: func_type ID LB paralist? RB blockstmt;
+func_type: prim_type | arraytype | VOIDTYPE;
+arraytype: prim_type LSB RSB;
+paralist: paradcl (COMA paradcl)*;
 paradcl: prim_type para;
 para: ID (LSB RSB)?;
-func_type: prim_type | VOIDTYPE | arraytype;
-arraytype: prim_type LSB RSB;
+
+
+//------------------------ Block Statement ----------------------//
 
 blockstmt: LP (var_declare | stmt)* RP;
 
@@ -67,13 +75,15 @@ stmt: blockstmt | if_stmt
     | return_stmt | expr_stmt
     ;
 
-if_stmt: IF LB expr_stmt LB stmt (ELSE stmt)?;
-while_stmt: DO stmt+ WHILE expr_stmt SEMI;
-for_stmt: FOR LB expr_stmt expr_stmt expr_stmt RB stmt;
+if_stmt: IF LB expr0 RB stmt (ELSE stmt)?;
+while_stmt: DO stmt+ WHILE expr0 SEMI;
+for_stmt: FOR LB expr_stmt expr_stmt expr0 RB stmt;
 break_stmt: BREAK SEMI;
 continue_stmt: CONTINUE SEMI;
-return_stmt: RETURN (expr_stmt)? SEMI;
+return_stmt: RETURN (expr0)? SEMI;
 expr_stmt: expr0 SEMI;
+
+//-------------------------- Expression ------------------------//
 
 expr0: expr1 ASSIGN expr0 | expr1;
 expr1: expr1 OR expr2 | expr2;
@@ -94,6 +104,21 @@ arglist: (expr0 (COMA expr0)*)?;
 
 //------------------------------ LEXER --------------------------------//
 //-------------------------------------------------------------------------//
+//-------------------------------- Literal --------------------------------//
+
+INTLIT: Digit+;
+
+FLOATLIT: Digit+ Dot (Digit)* Exponent?
+	    | Digit* Dot (Digit)+ Exponent?
+	    | Digit+ Exponent;
+
+BOOLEANLIT: TRUE | FALSE;
+
+STRINGLIT: '"' Character* '"' {
+    temp = str(self.text)
+    self.text = temp[1:-1]
+};
+
 //------------------------------ Keyword ------------------------------//
 
 BOOLEANTYPE: 'boolean';
@@ -155,21 +180,6 @@ RSB: ']';
 
 COMA: ',';
 SEMI: ';';
-
-//-------------------------------- Literal --------------------------------//
-
-INTLIT: Digit+;
-
-FLOATLIT: Digit+ Dot (Digit)* Exponent?
-	    | Digit* Dot (Digit)+ Exponent?
-	    | Digit+ Exponent;
-
-BOOLEANLIT: TRUE | FALSE;
-
-STRINGLIT: '"' Character* '"' {
-    temp = str(self.text)
-    self.text = temp[1:-1]
-};
 
 //------------------------------ Comment ------------------------------//
 
