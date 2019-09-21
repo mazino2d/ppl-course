@@ -1,0 +1,7 @@
+int main ()
+{
+    a = !(a && b || c);
+    e = a / b *c / (9* c % d);
+    z = !(a && b || c);
+    v = r / b *l / (1 * c % d);
+}

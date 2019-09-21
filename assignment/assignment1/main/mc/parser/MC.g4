@@ -77,7 +77,7 @@ stmt: blockstmt | if_stmt
 
 if_stmt: IF LB expr0 RB stmt (ELSE stmt)?;
 while_stmt: DO stmt+ WHILE expr0 SEMI;
-for_stmt: FOR LB expr_stmt expr_stmt expr0 RB stmt;
+for_stmt: FOR LB expr0 SEMI expr0 SEMI expr0 RB stmt;
 break_stmt: BREAK SEMI;
 continue_stmt: CONTINUE SEMI;
 return_stmt: RETURN (expr0)? SEMI;
@@ -93,7 +93,7 @@ expr4: expr5 (LT | LE | GT | GE) expr5 | expr5;
 expr5: expr5 (ADD | SUB) expr6 | expr6;
 expr6: expr6 (MUL | DIV | MOD) expr7 | expr7;
 expr7: (NOT | SUB) expr7 | expr8;
-expr8: expr8 LSB  expr8 RSB | expr9;
+expr8: expr9 LSB  expr0 RSB | expr9;
 expr9: LB expr0 RB | operands;
 
 operands: INTLIT   | BOOLEANLIT | ID
@@ -109,8 +109,8 @@ arglist: (expr0 (COMA expr0)*)?;
 INTLIT: Digit+;
 
 FLOATLIT: Digit+ Dot (Digit)* Exponent?
-	    | Digit* Dot (Digit)+ Exponent?
-	    | Digit+ Exponent;
+	               | Digit* Dot (Digit)+ Exponent?
+	               | Digit+ Exponent;
 
 BOOLEANLIT: TRUE | FALSE;
 
@@ -185,12 +185,12 @@ SEMI: ';';
 
 CMTLINE: '//' ~[\n\r\f]* -> skip;
 CMTBLOCK: '/''*' .*? '*''/' -> skip;
-WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
+WS: [ \f\t\r\n]+ -> skip; // skip spaces, tabs, newlines
 
 //------------------------------ Error token ------------------------------//
 
-UNCLOSE_STRING: '"' Character* ([\b\t\n\f\r"\\] | EOF) {
-    esc = ['\b', '\t', '\n', '\f', '\r', '"', '\\']
+UNCLOSE_STRING: '"' Character* ([\b\f\r\n\t\\] | EOF) {
+    esc = ['\b', '\t', '\n', '\f', '\r', '\\']
     temp = str(self.text)
 
     if temp[-1] in esc:

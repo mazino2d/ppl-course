@@ -1,0 +1,3 @@
+
+            int x; // inline and /* block // and inline /* and block */
+            

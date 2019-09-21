@@ -1,0 +1,16 @@
+
+        void main(){
+    // first block
+    {
+        // second block
+        a = 5;
+        {
+            // third block
+            c =10;
+            {
+                // fourth block
+                d = 1;
+            }
+        }
+    }
+}

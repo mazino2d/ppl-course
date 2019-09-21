@@ -1,0 +1,5 @@
+void foo(){    k = 2; {
+        a = "hello"; {
+            69;  }
+    }  foo(i, a);
+}

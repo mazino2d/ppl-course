@@ -1,0 +1,1 @@
+int main() {ele = arr[5];}

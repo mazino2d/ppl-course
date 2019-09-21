@@ -1,0 +1,5 @@
+
+            void diag () {
+            /* first block comment------ /*and another*/ */
+            }
+            

@@ -1,0 +1,9 @@
+
+        void foo() {
+    for ( x = 1 ; x < 3 ; x = x + 1 ) {
+        a = a + 2 ;
+        continue ; break;
+        a[5] =10;
+    }
+}
+        

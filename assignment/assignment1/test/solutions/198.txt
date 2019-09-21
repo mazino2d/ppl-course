@@ -1,1 +1,1 @@
-<EOF>
+int,f,(,),{,return,69,;,},<EOF>

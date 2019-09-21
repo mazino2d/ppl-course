@@ -1,0 +1,2 @@
+int arr[100] = { 0 }; 
+    int i, x, pos, n = 10; 

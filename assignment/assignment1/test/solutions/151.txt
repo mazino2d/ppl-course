@@ -1,1 +1,1 @@
-<EOF>
+string,x,;,x,=,hello PPL,;,<EOF>

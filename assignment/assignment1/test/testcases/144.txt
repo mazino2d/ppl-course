@@ -1,0 +1,3 @@
+begin = clock(); 
+    qsort(arr, N, sizeof(int), compare); 
+    end = clock(); 

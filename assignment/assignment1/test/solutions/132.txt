@@ -1,1 +1,1 @@
-<EOF>
+bool,comp_str,(,string,s1,,,string,s2,),{,if,(,s1,Error Token .

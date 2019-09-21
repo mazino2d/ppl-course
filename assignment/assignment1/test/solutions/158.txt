@@ -1,1 +1,1 @@
-<EOF>
+x,=,this string has 'another string',<EOF>

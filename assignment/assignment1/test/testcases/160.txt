@@ -1,0 +1,3 @@
+
+            char ppl; // variable a // with integer type
+            

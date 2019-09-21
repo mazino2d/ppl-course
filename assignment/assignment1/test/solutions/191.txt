@@ -1,1 +1,1 @@
-<EOF>
+void,main,(,),{,putInt,(,a,),;,},int,foo,(,),{,int,a,;,a,=,1,;,},<EOF>

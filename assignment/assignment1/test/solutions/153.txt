@@ -1,1 +1,1 @@
-<EOF>
+www,=,get a \n new line,;,<EOF>

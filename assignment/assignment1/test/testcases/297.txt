@@ -1,0 +1,19 @@
+
+    int main()
+ 
+{
+ 
+      float a, b, c;
+ 
+      printf("\nPlease enter 3 numbers: ");
+ 
+      scanf("%f %f %f", a, b, c);
+ 
+      if(c<=a && c<=b)
+ 
+         printf("The smallest number is %.3f", c);
+ 
+      return 0;
+ 
+}
+        

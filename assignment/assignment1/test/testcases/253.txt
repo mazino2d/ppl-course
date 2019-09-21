@@ -1,0 +1,6 @@
+void main() {
+    putInt(a);
+} int foo(){
+        int p;
+        z = 10;
+    }

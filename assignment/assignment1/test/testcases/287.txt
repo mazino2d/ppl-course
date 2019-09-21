@@ -1,0 +1,6 @@
+int main(){
+            a = b() + c() + d();
+            a = a / sum(a,b) + sub(a,b);
+            print(a);
+        }
+        

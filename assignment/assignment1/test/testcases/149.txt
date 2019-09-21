@@ -1,0 +1,8 @@
+h// Function to print an array 
+void printArray() 
+{ 
+    int i; 
+    for (i = 0; i < n; i++) 
+        cout << a[i] << " "; 
+    cout << endl; 
+} ello

@@ -1,0 +1,18 @@
+
+    int main()
+ 
+{
+ 
+   int n, sum , d;
+   scanf("%d",n);
+   do
+   {
+      rem = n % 10;
+      sum = sum + rem;
+      n = n / 100;
+   }while(n != 0);
+
+   return 0;
+ 
+}
+        

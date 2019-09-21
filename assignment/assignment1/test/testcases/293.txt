@@ -1,0 +1,57 @@
+
+        int evaluatePostfix(string exp)  
+{  
+    // Create a stack of capacity equal to expression size  
+    int stack;
+    stack = createStack(strlen(exp));  
+    int i;  
+  
+    // See if stack was created successfully  
+    if (!stack) return -1;  
+  
+    // Scan all characters one by one  
+    for (i = 0; exp[i]; i = i + 1)  
+    {  
+        //if the character is blank space then continue  
+        if(exp[i] == " ")continue;  
+          
+        // If the scanned character is an  
+        // operand (number here),extract the full number  
+        // Push it to the stack.  
+        else if (isdigit(exp[i]))  
+        {  
+            int num;
+            num=0;  
+              
+            //extract full number  
+            while(isdigit(exp[i]))  
+            {  
+            num = num * 10 + (int)(exp[i] - '0');  
+                i = i + 1;  
+            }  
+            i--;  
+              
+            //push the element in the stack  
+            push(stack,num);  
+        }  
+          
+        else
+        {  
+            int val1;
+            val1 = pop(stack);  
+            int val2;
+            val2 = pop(stack);  
+              
+            switch (exp[i])  
+            {  
+            case '+': push(stack, val2 + val1); break;  
+            case '-': push(stack, val2 - val1); break;  
+            case '*': push(stack, val2 * val1); break;  
+            case '/': push(stack, val2/val1); break;  
+              
+            }  
+        }  
+    }  
+    return pop(stack);  
+}  
+        

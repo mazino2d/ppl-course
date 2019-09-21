@@ -1,1 +1,1 @@
-<EOF>
+void,maximum,(,void,*,arg,),{,int,i,,,num,=,thread_no,+,+,;,int,maxs,=,0,;,for,(,i,=,num,*,(,max,/,4,),;,i,<,(,num,+,1,),*,(,max,/,4,),;,i,+,+,),{,if,(,a,[,i,],>,maxs,),maxs,=,a,[,i,],;,},max_num,[,num,],=,maxs,;,},<EOF>

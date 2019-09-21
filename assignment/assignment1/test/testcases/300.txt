@@ -1,0 +1,15 @@
+
+    int main()
+ 
+{
+   if (fp1 = fopen("test1.c", "r"))
+   {
+      ch = getc(fp1);
+      fp2 = fopen("test2.c", "w+");
+      return 0;
+   }
+ 
+   return 1;
+ 
+}
+        

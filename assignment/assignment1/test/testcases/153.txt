@@ -1,0 +1,3 @@
+
+            www = "get a \n new line" ;
+            

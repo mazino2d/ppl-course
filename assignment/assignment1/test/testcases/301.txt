@@ -1,0 +1,32 @@
+
+    int  main()
+ 
+{
+ 
+    int i;
+    i = 8;
+ 
+    printf("Factorial of the number %d is %d\n", i, factorial(i));
+ 
+    return 0;
+ 
+}
+ 
+ 
+ 
+int factorial( int i)
+ 
+{
+ 
+   if(i < 2) 
+ 
+   {
+ 
+      return 1;
+ 
+   }
+ 
+   return i * factorial(i - 1);
+ 
+}
+        

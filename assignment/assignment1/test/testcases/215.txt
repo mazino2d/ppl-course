@@ -1,0 +1,1 @@
+int main() { if(a>2) {int b; print(b);} else {print("PPL");}}

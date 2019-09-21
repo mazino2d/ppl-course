@@ -1,0 +1,15 @@
+
+    int main()
+{
+   int i,fact,num;
+ 
+   printf("Please enter a number to find factorial : ");
+   scanf("%d",num);
+ 
+   for(i=1;i<=num;i = i+1)
+   fact=fact*i;
+   printf("");
+   printf("Entered number is %d and it's factorial (%d!) is %d",num,num,fact);
+   return 0;
+}
+        
