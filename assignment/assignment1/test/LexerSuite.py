@@ -3,6 +3,9 @@ from TestUtils import TestLexer
 
 class LexerSuite(unittest.TestCase):
     # base test
+    def test_STRLIT_100(self):
+            """ Test Unclosed String """
+            self.assertTrue(TestLexer.checkLexeme(""" "ds\t"" ""","""123.e-13,-,546,+,ABC,Unclosed String: """,400))
     def test_comment(self):
         self.assertTrue(TestLexer.checkLexeme(
             '//Hello\n/*Hi\nYay*///?!@#$%^//',
