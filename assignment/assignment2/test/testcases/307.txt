@@ -1,0 +1,1 @@
+int a[5]; float b[6]; boolean c[7];

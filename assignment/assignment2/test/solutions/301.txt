@@ -1,1 +1,1 @@
-Program([None])
+Program([VarDecl(Id(a),ArrayType(FloatType,IntLiteral(5)))])

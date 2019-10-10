@@ -25,7 +25,7 @@ class ASTGeneration(MCVisitor):
         if ctx.INTTYPE(): return IntType()
         elif ctx.FLOATTYPE(): return FloatType()
         elif ctx.BOOLEANTYPE(): return BoolType()
-        else : return StringType()
+        elif ctx.STRINGTYPE() : return StringType()
 
     def visitVarlist(self, ctx:MCParser.VarlistContext):
         if ctx.varlist() :
@@ -41,43 +41,34 @@ class ASTGeneration(MCVisitor):
 
 
     def visitFuncdecl(self, ctx:MCParser.FuncdeclContext):
-        # functiontype = self.visitFunctype(ctx.functype())
-        # functionname = self.ID()
-        # paralist = self.visitParalist(ctx.paralist)
-        # blockstmt = self.visitBlockstmt(ctx.blockstmt)
-        # return FuncDecl(functionname, paralist, functiontype, blockstmt)
-        return self.visitChildren(ctx)
+        functiontype = self.visitFunctype(ctx.functype())
+        functionname = Id(ctx.ID().getText())
+        paralist = (self.visitParalist(ctx.paralist()) if ctx.paralist() else [])
+        blockstmt = self.visitBlockstmt(ctx.blockstmt())
+        return FuncDecl(functionname, paralist, functiontype, blockstmt)
 
     def visitFunctype(self, ctx:MCParser.FunctypeContext):
-        # if ctx.primtype() :  return self.visitPrimtype()
-        # elif ctx.arraytype() : return self.visitArrayType()
-        # else : return VoidType()
-        return self.visitChildren(ctx)
+        if ctx.primtype() :  return self.visitPrimtype(ctx.primtype())
+        elif ctx.arraytype() : return self.visitArraytype(ctx.arraytype())
+        else : return VoidType()
 
     def visitArraytype(self, ctx:MCParser.ArraytypeContext):
-        # primtype = ctx.primtype()
-        # return ArrayPointerType(primtype)
-        return self.visitChildren(ctx)
+        primtype = self.visitPrimtype(ctx.primtype())
+        return ArrayPointerType(primtype)
 
     def visitParalist(self, ctx:MCParser.ParalistContext):
-        # paralist = list()
-        # for x in ctx.paradecl() :
-        #     paradecl = self.visitParadecl(x)
-        #     if isinstance(paradecl, list):
-        #         paralist.extend(paradecl)
-        #     else :
-        #         paralist.append(paradecl)
-        # return paralist
-        return self.visitChildren(ctx)
+        return [self.visitParadecl(x) for x in ctx.paradecl()]
 
     def visitParadecl(self, ctx:MCParser.ParadeclContext):
-        return self.visitChildren(ctx)
-    def visitPara(self, ctx:MCParser.ParaContext):
-        return self.visitChildren(ctx)
-
+        funcname = Id(ctx.ID().getText())
+        primtype = self.visitPrimtype(ctx.primtype())
+        if ctx.LSB() and ctx.RSB() :
+            return VarDecl(funcname, ArrayPointerType(primtype))
+        else :
+            return VarDecl(funcname, primtype)
 
     def visitBlockstmt(self, ctx:MCParser.BlockstmtContext):
-        return self.visitChildren(ctx)
+        return Block([])
     def visitStmt(self, ctx:MCParser.StmtContext):
         return self.visitChildren(ctx)
     def visitIfstmt(self, ctx:MCParser.IfstmtContext):

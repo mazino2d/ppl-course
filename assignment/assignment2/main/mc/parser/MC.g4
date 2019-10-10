@@ -53,7 +53,7 @@ declaration: vardecl | funcdecl;
 
 vardecl: primtype varlist SEMI;
 primtype: BOOLEANTYPE | INTTYPE
-                | FLOATTYPE | STRINGTYPE;
+        | FLOATTYPE | STRINGTYPE;
 varlist: var COMA varlist | var;
 var: ID LSB INTLIT RSB | ID;
 
@@ -63,15 +63,13 @@ funcdecl: functype ID LB paralist? RB blockstmt;
 functype: primtype | arraytype | VOIDTYPE;
 arraytype: primtype LSB RSB;
 paralist: paradecl (COMA paradecl)*;
-paradecl: primtype para;
-para: ID (LSB RSB)?;
-
+paradecl: primtype ID (LSB RSB)?;
 
 //------------------------ Block Statement ----------------------//
 
 blockstmt: LP (vardecl | stmt)* RP;
 
-stmt: blockstmt | ifstmt
+stmt: blockstmt  | ifstmt
     | whilestmt  | forstmt
     | breakstmt  | continuestmt
     | returnstmt | exprstmt
