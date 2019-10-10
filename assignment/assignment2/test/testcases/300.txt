@@ -1,1 +1,1 @@
-int main() {}
+int a, b[5];int a, b[5];int a, b[5];

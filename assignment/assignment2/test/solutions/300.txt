@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],<class 'AST.IntType'>,Block([]))])
+Program([VarDecl(Id(a),IntType),VarDecl(Id(b),ArrayType(IntType,IntLiteral(5))),VarDecl(Id(a),IntType),VarDecl(Id(b),ArrayType(IntType,IntLiteral(5))),VarDecl(Id(a),IntType),VarDecl(Id(b),ArrayType(IntType,IntLiteral(5)))])
