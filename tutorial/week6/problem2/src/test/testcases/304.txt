@@ -1,0 +1,1 @@
+int a, c float b int d, e float f
