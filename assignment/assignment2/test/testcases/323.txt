@@ -1,0 +1,7 @@
+void main() {if(true) {
+                print("hello");
+                int a = 10;
+                a = a + 100;
+                a = a || 100;
+                }
+            }

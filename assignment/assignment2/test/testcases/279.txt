@@ -1,0 +1,4 @@
+float[] _main() {
+            float a[10];
+            return a[];
+        }

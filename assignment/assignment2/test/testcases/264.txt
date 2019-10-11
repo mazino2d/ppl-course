@@ -1,0 +1,4 @@
+int _main() {
+            do{a=2;}
+            return 0;
+        }

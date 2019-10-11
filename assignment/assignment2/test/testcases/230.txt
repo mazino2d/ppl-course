@@ -1,0 +1,6 @@
+int _main() {
+            boolean a,b;
+            a = true;
+            b = false; 
+            return 0;
+        }

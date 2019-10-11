@@ -1,0 +1,10 @@
+int main() {
+            int a[3];
+            do{
+                boolean b;
+                a[0] = foo(2);
+                a[1] = put(2,7);
+                a[2] = push(37);
+            }
+            while( b >= 0);
+        }

@@ -1,0 +1,14 @@
+int _main() {
+            if(a == 5){
+                print("D");
+            }
+            else{
+                if(b != 9){
+                    print("K");
+                }
+                else{
+                    b = 70;
+                }
+                b = 12;
+            }
+        }

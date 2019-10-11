@@ -1,0 +1,3 @@
+int ____main___() {
+            return foo();
+        }

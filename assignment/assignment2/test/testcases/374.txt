@@ -1,0 +1,20 @@
+void main(){
+            int a;
+            a = true;
+            if (true){
+                if (a == true){
+                    if (!a){
+                        a = false;
+                        string b;
+                        b = a;
+                    }
+                    else{
+                        string b;
+                        b = a;
+                    }
+                }
+                else{
+                    a = false;
+                }
+            }
+        }

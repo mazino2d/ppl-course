@@ -1,0 +1,7 @@
+float _main() {
+            int a;
+            a = 1;
+            float b;
+            b=b+---2--a;
+            return b;
+        }

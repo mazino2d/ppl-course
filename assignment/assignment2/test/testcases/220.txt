@@ -1,0 +1,15 @@
+int main() {
+            int x;
+            x = 9;
+            do{
+                int a;
+                a = 0;
+                a = a + x;
+                if((a%3) == 0) x= x+1;
+                else{
+                    x = x -1;
+                }
+            }
+            while((x >=0) && (a < 100));
+            return 1;
+        }

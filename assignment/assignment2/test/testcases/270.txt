@@ -1,0 +1,4 @@
+void _main() {
+            if(----a) return 0;
+            return ;
+        }

@@ -1,0 +1,7 @@
+int _main() {
+            string a;
+            a = "a string \n\t\b";
+            int i;
+            i=9;
+            return ----i;
+        }

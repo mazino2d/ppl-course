@@ -67,7 +67,8 @@ paradecl: primtype ID (LSB RSB)?;
 
 //------------------------ Block Statement ----------------------//
 
-blockstmt: LP (vardecl | stmt)* RP;
+blockstmt: LP instruction* RP;
+instruction: vardecl | stmt;
 
 stmt: blockstmt  | ifstmt
     | whilestmt  | forstmt
@@ -97,7 +98,7 @@ expr8: expr9 LSB  expr0 RSB | expr9;
 expr9: LB expr0 RB | operand;
 
 operand: INTLIT   | BOOLEANLIT | ID
-            | FLOATLIT | STRINGLIT | calfunc;
+    | FLOATLIT | STRINGLIT | calfunc;
 
 calfunc: ID LB arglist RB;
 arglist: (expr0 (COMA expr0)*)?;

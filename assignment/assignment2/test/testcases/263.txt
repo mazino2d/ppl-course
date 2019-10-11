@@ -1,0 +1,5 @@
+int _main() {
+            int a;
+            else b-1;
+            return 0;
+        }

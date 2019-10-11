@@ -1,0 +1,4 @@
+int _main() {
+            return = 12-4;
+            return 0;
+        }

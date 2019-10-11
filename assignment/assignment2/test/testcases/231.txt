@@ -1,0 +1,13 @@
+string _main() {
+            int b;
+            string s;
+            s = "Hi";
+            b = 1;
+            do{
+                int i;
+                for(i = 10;i>0;i=i-1){}
+                b=b-1;
+            }
+            while(b>0);
+            return s;
+        }

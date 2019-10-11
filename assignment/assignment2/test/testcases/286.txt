@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            if(i--2==76!a) return 0;
+            return 0;
+        }

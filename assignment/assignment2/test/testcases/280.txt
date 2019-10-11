@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            for(if(!a) a=a+2;a<10;a=a+3){}
+            return 0;
+        }

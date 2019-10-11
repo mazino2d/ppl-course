@@ -1,0 +1,4 @@
+int a,b,c;
+        int _main() {
+            return 0;
+        }

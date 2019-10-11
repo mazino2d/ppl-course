@@ -1,0 +1,5 @@
+float _main() {
+            float a;
+            a = 12.7e34+5;
+            return a;
+        }

@@ -1,0 +1,10 @@
+int _main() {
+            int i;
+            int count;
+            count =10;
+            for(i = 0; i < count; i = i + 1){
+                int a;
+                a = i + 3;
+                print(i);
+            }
+        }

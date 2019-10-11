@@ -1,0 +1,10 @@
+int _main() {
+            int a;
+            a = 1.0987e4;
+            int b;
+            b = 8.97e-10;
+            int c;
+            c = (((a*a+a)*b-a*b)*a*b-34/a)/a -5*b;
+            print(c);
+            return 0;
+        }

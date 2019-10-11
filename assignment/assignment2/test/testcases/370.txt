@@ -1,0 +1,10 @@
+void main(){
+            for (a=1;a<10;a=a+1){
+                for(b=2;b%10==0;b=b+1){
+                    int c;
+                    float d;
+                    c = b;
+                    d = a;
+                }
+            }
+        }

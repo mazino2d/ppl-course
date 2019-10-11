@@ -1,0 +1,3 @@
+int _(string a[]) {
+            return 0;
+        }

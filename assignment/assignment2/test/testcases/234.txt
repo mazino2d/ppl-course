@@ -1,0 +1,3 @@
+int _func(int[], float b) {
+            return 0;
+        }

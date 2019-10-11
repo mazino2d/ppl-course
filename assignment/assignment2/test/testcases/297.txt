@@ -1,0 +1,5 @@
+int _main() {
+            a = 1;
+            b = true/false+true*false;
+            return 0;
+        }

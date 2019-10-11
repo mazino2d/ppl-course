@@ -1,0 +1,4 @@
+int _main() {
+            if(isFalse(b)) b=b+5;
+            return 0;
+        }

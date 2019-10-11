@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            for(i=0;i<6;i=i+1) countinue;
+            return 0;
+        }

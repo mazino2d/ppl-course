@@ -1,0 +1,5 @@
+int _main() {
+            do{}
+            while(b>0)
+            return 0;
+        }

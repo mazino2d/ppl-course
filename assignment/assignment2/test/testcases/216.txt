@@ -1,0 +1,9 @@
+int _main() {
+            int a;
+            a = 1;
+            if(a != 0) countinue;
+            else{
+                a = 0;
+            }
+            return 0;
+        }

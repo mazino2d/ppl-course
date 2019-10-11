@@ -1,0 +1,3 @@
+void _main(int a[10], string s) {
+            return ;
+        }

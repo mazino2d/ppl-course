@@ -1,0 +1,11 @@
+void main(){
+            int a;
+            int b;
+            boolean c;
+            for (a=1; a < 10; a=a+1){
+                for (b=0; b != 10; b=b+1){
+                    c = b;
+                }
+                b = a + 1;
+            }
+        }

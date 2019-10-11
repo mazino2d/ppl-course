@@ -1,0 +1,3 @@
+int _main_14() {
+            funcall(a; b; c);
+        }

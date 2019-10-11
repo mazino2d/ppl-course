@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            a = --a[b[2+4]+1];
+            return 0;
+        }

@@ -1,0 +1,5 @@
+
+        float al(int a,float b);
+        int _main() {
+            return 0;
+        }

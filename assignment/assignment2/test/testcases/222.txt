@@ -1,0 +1,8 @@
+int _main() {
+            int a;
+            a = 1;
+            string s;
+            s = "a normal string";
+            s = s + ", and special string";
+            print(s);
+        }

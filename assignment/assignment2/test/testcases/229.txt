@@ -1,0 +1,7 @@
+string _main() {
+            int a;
+            a = 1;
+            string s;
+            for(;;){}
+            return s;
+        }

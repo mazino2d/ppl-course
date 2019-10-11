@@ -1,0 +1,6 @@
+void _main() {
+            int b;
+            b=5;
+            a[][]=b;
+            return ;
+        }

@@ -1,0 +1,14 @@
+void main(){
+            for (a=1;a<10;a=a*2){
+                for(b=2;b==10;b=b*2){
+                    for(c=100;c!=0;c=c%2){
+                        for(d=1000;d>0;d=d%10){
+                            int e;
+                            e = d;
+                            string d;
+                            d = e;
+                        }
+                    }
+                }
+            }
+        }

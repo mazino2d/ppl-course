@@ -1,0 +1,4 @@
+int _main() {
+            a=a+1;// a line comment;
+            return 0;
+        }

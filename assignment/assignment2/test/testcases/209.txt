@@ -1,0 +1,3 @@
+int _main() {
+            float a = 4.9;
+        }

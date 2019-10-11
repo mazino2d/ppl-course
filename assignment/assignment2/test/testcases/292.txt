@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            a<<9;
+            return 0;
+        }

@@ -1,0 +1,3 @@
+int arrayment8() {
+            foo(x+2)[x+A[y]];
+        }

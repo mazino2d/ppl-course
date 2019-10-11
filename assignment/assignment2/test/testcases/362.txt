@@ -1,0 +1,1 @@
+void main() {foo(a, b[6], c);}

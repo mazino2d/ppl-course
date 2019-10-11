@@ -1,0 +1,4 @@
+int _main() {
+            b=foo(func(a,goo(a[i]),a[f(a[b+i(1)||foo()])],x()));
+            return 0;
+        }

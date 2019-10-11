@@ -1,0 +1,10 @@
+void main() {
+            if(a && b || c) {
+                print("hello");
+                int a[5];
+                string b[10];
+            }
+            else {
+                HPC(kafka);
+            }
+        }

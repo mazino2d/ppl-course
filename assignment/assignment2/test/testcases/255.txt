@@ -1,0 +1,3 @@
+float _() {
+            return 1.0e38;
+        }

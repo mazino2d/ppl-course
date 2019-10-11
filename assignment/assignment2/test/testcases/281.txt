@@ -1,0 +1,3 @@
+int _main() {
+            return goo(a[b-f(a[i])]);
+        }

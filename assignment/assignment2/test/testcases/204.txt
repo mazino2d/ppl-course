@@ -1,0 +1,3 @@
+int test_case() {
+            A[B[5+x]];
+        }

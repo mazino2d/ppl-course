@@ -1,0 +1,6 @@
+void _main() {
+            string a;
+            a = "";
+            a= a+" " - false;
+            return ;
+        }

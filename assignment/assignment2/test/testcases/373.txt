@@ -1,0 +1,45 @@
+void main(){
+            int a;
+            a = true;
+            if (true){
+                if (a == true){
+                    if (!a){
+                        a = false;
+                        string b;
+                        b = a;
+                        if (b){
+                            boolean c;
+                            c = b;
+                            if (!c){
+                                int d;
+                                d = c;
+                                if (d == c || !c){
+                                    string e;
+                                    e = d;
+                                }
+                                else{
+                                    string e;
+                                    e = d;
+                                }
+                            }
+                            else{
+                                int d;
+                                d = e;
+                                boolean t;
+                                t = e;
+                                if (d && !e){
+                                    string t;
+                                    t = d;
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        if ((a == b || c != b) && a > b){
+                            int e;
+                            e = a;
+                        }
+                    }
+                }
+            }
+        }

@@ -1,0 +1,7 @@
+boolean[] _main() {
+            boolean b[3];
+            b[0] = true;
+            b[1] = false;
+            b[2] = flase;
+            return b;
+        }

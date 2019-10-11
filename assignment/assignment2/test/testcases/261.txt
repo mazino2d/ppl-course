@@ -1,0 +1,4 @@
+int _main() {
+            if(a==0) b=b*8%2; else a= 9+i||0;
+            return 0;
+        }

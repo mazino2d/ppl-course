@@ -1,0 +1,1 @@
+void main() {for(i = 1+a[6];a[i]>=(2/5);i = 10/i) print();}

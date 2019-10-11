@@ -1,0 +1,3 @@
+int _(int self, 1) {
+            return 0;
+        }

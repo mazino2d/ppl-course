@@ -1,0 +1,1 @@
+void main() {if(true) print("hello");}

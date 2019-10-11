@@ -1,0 +1,7 @@
+void foo(){}
+        int main() {
+            int a;
+            a = 1;
+            float d = 5.6; 
+            return 0;
+        }

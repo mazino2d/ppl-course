@@ -1,0 +1,6 @@
+int _main() {
+            int a;
+            a = 1;
+            fun1(fun2(fun3(a[2])))[1] = fun1(i || b[fun(t)]);
+            return 0;
+        }

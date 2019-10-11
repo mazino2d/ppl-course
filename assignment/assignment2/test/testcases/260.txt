@@ -1,0 +1,5 @@
+int _main() {
+            int a;
+            if(a==0) b=b+2 else a= 9+i||0;
+            return 0;
+        }
