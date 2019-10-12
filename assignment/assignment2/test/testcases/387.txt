@@ -1,0 +1,1 @@
+int a; float b,c,d[3]; boolean e; string s; 

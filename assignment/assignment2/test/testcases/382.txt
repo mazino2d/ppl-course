@@ -1,1 +1,3 @@
-int a[5];
+void fo() {
+            do{ f(foo(fr(aaa(e(r()))))); } while a>d;
+        }

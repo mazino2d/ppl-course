@@ -1,1 +1,5 @@
-int a[5];
+int main () {
+            if( (c > x) < d){
+                int a,b;
+            }
+        }

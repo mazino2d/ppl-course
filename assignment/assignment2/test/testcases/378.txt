@@ -1,1 +1,6 @@
-int a[5];
+int main () {
+            putIntLn(4);
+            ar[12];
+            foo(a[10],r);
+            break;continue;
+        }

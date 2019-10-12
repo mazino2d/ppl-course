@@ -1,1 +1,3 @@
-int a[5];
+float d () {
+           do if (a==s) {if (t>a) if (d>=e) if (a<y) if (r<=o) {x+1;}} while foo();
+        }

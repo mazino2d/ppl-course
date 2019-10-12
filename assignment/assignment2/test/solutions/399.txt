@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main),[],VoidType,Block([Dowhile([Dowhile([Dowhile([Dowhile([Dowhile([Dowhile([CallExpr(Id(print),[])],BooleanLiteral(true))],BooleanLiteral(true))],BooleanLiteral(true))],BooleanLiteral(true))],BooleanLiteral(true))],BooleanLiteral(true))]))])

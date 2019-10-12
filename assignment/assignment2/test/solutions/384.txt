@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a),ArrayType(IntType,5))])
+Program([FuncDecl(Id(d),[],FloatType,Block([Dowhile([If(BinaryOp(==,Id(a),Id(s)),Block([If(BinaryOp(>,Id(t),Id(a)),If(BinaryOp(>=,Id(d),Id(e)),If(BinaryOp(<,Id(a),Id(y)),If(BinaryOp(<=,Id(r),Id(o)),Block([BinaryOp(+,Id(x),IntLiteral(1))])))))]))],CallExpr(Id(foo),[]))]))])

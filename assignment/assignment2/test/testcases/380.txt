@@ -1,1 +1,3 @@
-int a[5];
+int foo () {
+            if (a+1) {{{{if(b+a) foo();}}}} else {if (c+d) t+a; else func(a(b(c)))[f+6*d()];}
+        }

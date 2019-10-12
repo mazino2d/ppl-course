@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a),ArrayType(BoolType,10)),VarDecl(Id(b),ArrayType(BoolType,5))])
+Program([VarDecl(a,ArrayType(BoolType,10)),VarDecl(b,ArrayType(BoolType,5))])

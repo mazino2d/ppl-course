@@ -35,9 +35,9 @@ class ASTGeneration(MCVisitor):
         
     def visitVar(self, ctx:MCParser.VarContext):
         if ctx.INTLIT() :
-            return (Id(ctx.ID().getText()), int(ctx.INTLIT().getText()))
+            return (ctx.ID().getText(), int(ctx.INTLIT().getText()))
         else :
-            return Id(ctx.ID().getText())
+            return ctx.ID().getText()
 
 
     def visitFuncdecl(self, ctx:MCParser.FuncdeclContext):
@@ -60,7 +60,7 @@ class ASTGeneration(MCVisitor):
         return [self.visitParadecl(x) for x in ctx.paradecl()]
 
     def visitParadecl(self, ctx:MCParser.ParadeclContext):
-        funcname = Id(ctx.ID().getText())
+        funcname = ctx.ID().getText()
         primtype = self.visitPrimtype(ctx.primtype())
         if ctx.LSB() and ctx.RSB() :
             return VarDecl(funcname, ArrayPointerType(primtype))

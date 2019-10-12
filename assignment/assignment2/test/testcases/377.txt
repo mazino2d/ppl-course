@@ -1,1 +1,3 @@
-int a[5];
+void f(int a,float b, float c){
+            true && false || (2 > 3/5);
+        }
