@@ -35,7 +35,7 @@ class ASTGeneration(MCVisitor):
         
     def visitVar(self, ctx:MCParser.VarContext):
         if ctx.INTLIT() :
-            return (Id(ctx.ID().getText()), IntLiteral(int(ctx.INTLIT().getText())))
+            return (Id(ctx.ID().getText()), int(ctx.INTLIT().getText()))
         else :
             return Id(ctx.ID().getText())
 

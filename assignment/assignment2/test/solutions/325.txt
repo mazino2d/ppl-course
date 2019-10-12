@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],VoidType,Block([If(BinaryOp(||,BinaryOp(&&,Id(a),Id(b)),Id(c)),Block([CallExpr(Id(print),[StringLiteral(hello)]),VarDecl(Id(a),ArrayType(IntType,IntLiteral(5))),VarDecl(Id(b),ArrayType(StringType,IntLiteral(10)))]),Block([CallExpr(Id(HPC),[Id(kafka)])]))]))])
+Program([FuncDecl(Id(main),[],VoidType,Block([If(BinaryOp(||,BinaryOp(&&,Id(a),Id(b)),Id(c)),Block([CallExpr(Id(print),[StringLiteral(hello)]),VarDecl(Id(a),ArrayType(IntType,5)),VarDecl(Id(b),ArrayType(StringType,10))]),Block([CallExpr(Id(HPC),[Id(kafka)])]))]))])

@@ -1,6 +1,6 @@
 void main() {if(true) {
                 print("hello");
-                int a = 10;
+                int a;
                 a = a + 100;
                 a = a || 100;
                 }

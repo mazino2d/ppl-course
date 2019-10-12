@@ -1,1 +1,1 @@
-void main() {a[5], b[5]);}
+void main() {a[5]; b[5];}

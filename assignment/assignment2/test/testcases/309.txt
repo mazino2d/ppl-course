@@ -1,1 +1,1 @@
-intl a; float b
+int a,x; float b,z; string a[10], l[6], r; boolean d[5];
