@@ -1,1 +1,1 @@
-['a', 'main', 'main']
+['a', 'main']
