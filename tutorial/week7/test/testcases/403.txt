@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],IntType,Block([CallExpr(Id(foo),[])]))])
+Program([FuncDecl(Id(main),[],IntType,Block([]))])

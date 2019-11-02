@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],IntType,Block([CallExpr(Id(putIntLn),[])]))])
+Program([VarDecl(a,IntType),FuncDecl(Id(main),[],IntType,Block([])),FuncDecl(Id(main),[],IntType,Block([]))])
