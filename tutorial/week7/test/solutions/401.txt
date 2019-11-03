@@ -1,1 +1,1 @@
-Type Mismatch In Statement: CallExpr(Id(putIntLn),[])
+['a', 't', 'main']

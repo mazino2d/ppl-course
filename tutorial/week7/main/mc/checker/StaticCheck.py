@@ -29,33 +29,37 @@ class StaticChecker(BaseVisitor,Utils):
         #print()
         self.ast = ast
 
- 
-    
     def check(self):
         return self.visit(self.ast,StaticChecker.global_envi)
-# Problem 1
-    # def visitProgram(self,ast, c): 
-    #     return [self.visit(x,c) for x in ast.decl]
 
-    # def visitFuncDecl(self,ast, c): 
-    #     return ast.name.name
-    
-    # def visitVarDecl(self, ast, c):
-    #     return ast.variable
-
-# Problem 1
     def visitProgram(self,ast, c): 
         for x in ast.decl:
             c.append(self.visit(x, c))
         return c
 
-    def visitFuncDecl(self,ast, c): 
-        name = ast.name.name
-
-        if name in c:
-            raise Redeclared(Function(), name)
+    def visitFuncDecl(self,ast, c):
+         # Name
+        if ast.name.name in c:
+            raise Redeclared(Function(), ast.name.name)
         else:
-            return name
+            local_envi = []
+            # Param
+            for x in ast.param:
+                # name = self.visit(x, local_envi)
+                name = x.variable
+                
+                if name in local_envi:
+                    raise Redeclared(Parameter(), name)
+                else :
+                    local_envi.append(name)
+            
+            body = self.visit(ast.body, local_envi)
+                    
+            return ast.name.name
+
+        
+
+        
     
     def visitVarDecl(self, ast, c):
         name = ast.variable
@@ -65,4 +69,6 @@ class StaticChecker(BaseVisitor,Utils):
         else:
             return name
 
+    def visitBlock(self, ast, c):
+        a = [c.append(self.visitVarDecl(x, c)) for x in ast.member]
     
