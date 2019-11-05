@@ -1,1 +1,1 @@
-['a', 't', 'main']
+Redeclared Variable: a

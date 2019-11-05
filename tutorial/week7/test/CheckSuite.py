@@ -3,15 +3,6 @@ from TestUtils import TestChecker
 from AST import *
 
 class CheckSuite(unittest.TestCase):
-    def test_right(self):
-        """Redeclared program"""
-        input = Program([
-                VarDecl('t',IntType()),
-            FuncDecl(Id("main"),[],IntType(),Block([]))])
-
-        expect = "['main', 't']"
-        self.assertTrue(TestChecker.test(input,expect,401))
-
     def test_redeclared_global(self):
         """Redeclared program"""
         input = Program([
@@ -20,7 +11,7 @@ class CheckSuite(unittest.TestCase):
                 FuncDecl(Id("main"),[],IntType(),Block([]))])
 
         expect = "Redeclared Variable: a"
-        self.assertTrue(TestChecker.test(input,expect,402))
+        self.assertTrue(TestChecker.test(input,expect,401))
 
     def test_redeclared_local(self):
         """Redeclared program"""
@@ -32,7 +23,7 @@ class CheckSuite(unittest.TestCase):
             ])
 
         expect = "Redeclared Variable: a"
-        self.assertTrue(TestChecker.test(input,expect,403))
+        self.assertTrue(TestChecker.test(input,expect,402))
 
     def test_redeclared_para(self):
         """Redeclared program"""
@@ -43,4 +34,4 @@ class CheckSuite(unittest.TestCase):
             ])
 
         expect = "Redeclared Variable: a"
-        self.assertTrue(TestChecker.test(input,expect,404))
+        self.assertTrue(TestChecker.test(input,expect,403))

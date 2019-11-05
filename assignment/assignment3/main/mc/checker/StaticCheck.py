@@ -21,11 +21,19 @@ class Symbol:
 class StaticChecker(BaseVisitor,Utils):
 
     global_envi = [
-    Symbol("getInt",MType([],IntType())),
-    Symbol("putIntLn",MType([IntType()],VoidType()))
+        Symbol("getInt",MType([],IntType())),
+        Symbol("putInt",MType([IntType()],VoidType())),
+        Symbol("putIntLn",MType([IntType()],VoidType())),
+        Symbol("getFloat",MType([],FloatType())),
+        Symbol("putFloat",MType([FloatType()],VoidType())),
+        Symbol("putFloatLn",MType([FloatType()],VoidType())),
+        Symbol("putBool",MType([BoolType()],VoidType())),
+        Symbol("putBoolLn",MType([BoolType()],VoidType())),
+        Symbol("putString",MType([StringType()],VoidType())),
+        Symbol("putStringLn",MType([StringType()],VoidType())),
+        Symbol("putLn",MType([],VoidType())),
     ]
-            
-    
+              
     def __init__(self,ast):
         #print(ast)
         #print(ast)
@@ -37,12 +45,55 @@ class StaticChecker(BaseVisitor,Utils):
     def check(self):
         return self.visit(self.ast,StaticChecker.global_envi)
 
-    def visitProgram(self,ast, c): 
-        return [self.visit(x,c) for x in ast.decl]
+    def visitProgram(self,ast, c):
+        program_envi = 0
 
-    def visitFuncDecl(self,ast, c): 
-        return list(map(lambda x: self.visit(x,(c,True)),ast.body.member)) 
-    
+        # check No Entry Point exception (2.7)
+        for x in ast.decl: 
+            if isinstance(x, FuncDecl):
+                if x.name.name == 'main':
+                    if isinstance(x.returnType, VoidType): program_envi = 1
+        
+        if program_envi == 0 : raise NoEntryPoint()
+
+        # visit global variable and function declaration
+        program_envi = c[:]
+        for x in ast.decl:
+            program_envi += [self.visit(x, program_envi)]
+
+        # return program environment
+        return program_envi
+
+    def visitFuncDecl(self,ast, c):
+        local_envi = []
+
+        # visit list of function parameter
+        for x in ast.param:
+            try:
+                local_envi += [self.visit(x, local_envi)]
+            except Redeclared as e:
+                raise Redeclared(Parameter(), e.n)
+        
+        # vist list of local variable
+        # TODO : check if return type of function is void
+        # isReturn = False
+        # for x in ast.body:
+        #     if self.visit(x, ()) is True:
+        #         isReturn = 
+
+
+        # check if function exists
+        if self.lookup(ast.name.name, c, lambda x: x.name):
+            raise Redeclared(Function(), ast.name)
+        else:
+            return Symbol(ast.name.name, ast.returnType)
+
+    def visitVarDecl(self, ast, c):
+        # check if variable exists
+        if self.lookup(ast.variable, c, lambda x: x.name):
+            raise Redeclared(Variable(), ast.name)
+        else:
+            return Symbol(ast.variable, ast.varType)
 
     def visitCallExpr(self, ast, c): 
         at = [self.visit(x,(c[0],False)) for x in ast.param]

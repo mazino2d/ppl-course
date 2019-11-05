@@ -1,1 +1,1 @@
-int main() {foo();}
+int pow() {foo();}
