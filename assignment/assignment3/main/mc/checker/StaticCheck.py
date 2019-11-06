@@ -35,9 +35,9 @@ class StaticChecker(BaseVisitor,Utils):
     ]
               
     def __init__(self,ast):
-        #print(ast)
-        #print(ast)
-        #print()
+        # print(ast)
+        # print(ast)
+        # print()
         self.ast = ast
 
  
@@ -47,17 +47,18 @@ class StaticChecker(BaseVisitor,Utils):
 
     def visitProgram(self,ast, c):
         program_envi = 0
-
         # check No Entry Point exception (2.7)
-        for x in ast.decl: 
+        for x in ast.decl:
             if isinstance(x, FuncDecl):
                 if x.name.name == 'main':
-                    if isinstance(x.returnType, VoidType): program_envi = 1
+                    if isinstance(x.returnType, VoidType): 
+                        program_envi = 1; break
         
         if program_envi == 0 : raise NoEntryPoint()
 
         # visit global variable and function declaration
         program_envi = c[:]
+        
         for x in ast.decl:
             program_envi += [self.visit(x, program_envi)]
 
@@ -74,42 +75,87 @@ class StaticChecker(BaseVisitor,Utils):
             except Redeclared as e:
                 raise Redeclared(Parameter(), e.n)
         
-        # vist list of local variable
+        # vist block of function
+        self.visit(ast.body, local_envi)
+
         # TODO : check if return type of function is void
         # isReturn = False
-        # for x in ast.body:
-        #     if self.visit(x, ()) is True:
-        #         isReturn = 
-
-
+        
         # check if function exists
         if self.lookup(ast.name.name, c, lambda x: x.name):
-            raise Redeclared(Function(), ast.name)
+            raise Redeclared(Function(), ast.name.name)
         else:
             return Symbol(ast.name.name, ast.returnType)
 
     def visitVarDecl(self, ast, c):
         # check if variable exists
         if self.lookup(ast.variable, c, lambda x: x.name):
-            raise Redeclared(Variable(), ast.name)
+            raise Redeclared(Variable(), ast.variable)
         else:
-            return Symbol(ast.variable, ast.varType)
+            return Symbol(ast.variable, ast.vze)
 
-    def visitCallExpr(self, ast, c): 
-        at = [self.visit(x,(c[0],False)) for x in ast.param]
-        
-        res = self.lookup(ast.method.name,c[0],lambda x: x.name)
-        if res is None or not type(res.mtype) is MType:
-            raise Undeclared(Function(),ast.method.name)
-        elif len(res.mtype.partype) != len(at):
-            if c[1]:
-                raise TypeMismatchInStatement(ast)
-            else:
-                raise TypeMismatchInExpression(ast)
-        else:
-            return res.mtype.rettype
-
-    def visitIntLiteral(self,ast, c): 
+    def visitIntLiteral(self,ast, c):
         return IntType()
+
+    def visitFloatLiteral(self, ast, c):
+        return FloatType()
+
+    def visitStringLiteral(self, ast, c):
+        return StringType()
+
+    def visitBooleanLiteral(self, ast, c):
+        return BoolType()
+
+    def visitBinaryOp(self, ast, c):
+        # TODO : Assignment operator, equal and not not_equal
+        ############################
+        left = self.visit(ast.left, c)
+        right = self.visit(ast.right, c)
+        op = ast.op
+
+        def checkType(acceptType, returnType=None):
+            if not isinstance(left, acceptType) or\
+               not isinstance(right, acceptType):
+                raise TypeMismatchInExpression(ast)
+        
+        if op in ['+', '-', '*', '/']:
+            checkType((IntType, FloatType))
+            if isinstance(left, IntType) and\
+               isinstance(right, IntType):
+                return IntType()
+            else:
+                return FloatType()
+        elif op in ['%']:
+            checkType(IntType)
+            return IntType()
+        elif op in ['&&', '||']:
+            checkType(BoolType)
+            return BoolType()
+        elif op in ['<', '<=', '>', '>=']:
+            checkType((IntType, FloatType))
+            return BoolType()
     
+    def visitUnaryOp(self, ast, c):
+        # TODO: Index operater
+        ######################
+        op = ast.op
+        exp = self.visit(ast.Expr)
+
+        if op == '-':
+            if isinstance(exp, (IntType, FloatType)):
+                return exp
+            else:
+                return TypeMismatchInExpression(ast)
+        
+        if op == '!':
+            if isinstance(exp, BoolType):
+                return BoolType()
+            else:
+                return TypeMismatchInExpression(ast)
+
+    def visitBlock(self, ast, c):
+        for x in ast.member:
+            self.visit(x, c)
+
+
 

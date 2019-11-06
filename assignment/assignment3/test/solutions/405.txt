@@ -1,1 +1,1 @@
-No Entry Point
+Type Mismatch In Expression: BinaryOp(+,StringLiteral(a),StringLiteral(a))

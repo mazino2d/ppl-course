@@ -1,3 +1,1 @@
-int main () {
-            putIntLn();
-        }
+Program([FuncDecl(Id(abc),[],VoidType,Block([]))])

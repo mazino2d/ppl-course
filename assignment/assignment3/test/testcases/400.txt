@@ -1,1 +1,1 @@
-int pow() {foo();}
+Program([FuncDecl(Id(main),[],VoidType,Block([]))])
