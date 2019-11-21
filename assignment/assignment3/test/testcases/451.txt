@@ -1,0 +1,9 @@
+
+               void main(){
+                    int a;
+                    float b;
+                    boolean c;
+                    c = !(b = 2.3);
+                    return;
+                }
+                

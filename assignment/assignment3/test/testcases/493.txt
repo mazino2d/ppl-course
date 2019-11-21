@@ -1,0 +1,23 @@
+
+                void printf(string c, int d) {
+                    return;
+                }
+                int main() {
+                    int a, b, c, i, n;
+
+                    n = 6;
+
+                    a = b = 1;
+                    printf("In day Fibonacci: ", 2);
+
+                    for(i = 1; i <= n-2; i = i + 1) {
+                        c = a + b;
+                        printf("%d ", c);
+                        
+                        a = b;
+                        b = c;
+                    }
+                    float a;
+                    return 0;
+                }
+                

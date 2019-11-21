@@ -1,0 +1,17 @@
+
+                int func1(int n){
+                    if (n == 0)
+                        return 1;
+                    else
+                        return n * func1(n - 1);
+                }
+                int func2(int x){
+                    return 32;
+                }
+                int main() {
+                    int n, result;
+                    n = 4;
+                    result = func1(n);
+                    return result;
+                }
+                

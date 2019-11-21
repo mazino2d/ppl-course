@@ -1,0 +1,9 @@
+
+                void main(){
+                    int a;
+                    float b;
+                    boolean c;
+                    2 = a;
+                    return;
+                }
+                

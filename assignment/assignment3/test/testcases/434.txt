@@ -1,0 +1,14 @@
+
+                int a, b;
+                int main(){
+                    for (a=1;a<10;a=a*2){
+                        for(b=2;b==10;b=b*2){
+                            int a[23];
+                            boolean c;
+                            int b;
+                            b = a[!c];
+                        }
+                    }
+                    return 1999;
+                }
+                

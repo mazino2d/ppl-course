@@ -1,0 +1,17 @@
+
+                int a;
+                void main1() {
+                    int main;
+                    float b;
+                    int a[5];
+                    return;
+                }
+                int main(){
+                    do 
+                        (true && false);
+                        if (a == 2%4) 
+                            a = 1; 
+                    while((a + 12) > 4.2);
+                    return 32;
+                }
+                

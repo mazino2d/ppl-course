@@ -1,0 +1,27 @@
+
+                int main1() {
+                    main1();
+                    return 324;
+                }
+                void printf(string c, int d) {
+                    return;
+                }
+                int main() { 
+                    int loop, number;
+                    int prime;
+                    prime = 1;
+                    number = 19;
+
+                    for(loop = 2; loop < number; loop = loop + 1) {
+                        if((number % loop) == 0) {
+                            prime = 0;
+                        }
+                    }
+
+                    if (prime == 1)
+                        printf("So %d la so nguyen to.", number);
+                    else
+                        printf("So %d khong phai la so nguyen to.", number);
+                    return 0;
+                }
+                

@@ -1,0 +1,13 @@
+
+               void foo() {
+                    return;
+               }
+               int main() {
+                    foo();
+                    int a;
+                    float b;
+                    boolean d;
+                    a = -(d && true);
+                    return 4;
+                }
+                

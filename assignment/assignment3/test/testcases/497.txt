@@ -1,0 +1,22 @@
+
+                void printf(string c, int d) {
+                    return;
+                }
+                int main() {
+                    int even;
+                    int odd;
+                    even = 24;
+                    odd = 31;
+                    if (even && 2 == 0) {
+                        printf("%d la so chan", even);
+                    } else {
+                        printf("%d la so le", even);
+                    }
+                    if (odd % 2 != 0 ) {
+                        printf("%d la so le", odd);
+                    } else {
+                        printf("%d la so chan", odd);
+                    }
+                    return 0;
+                }
+                

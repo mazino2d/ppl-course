@@ -1,0 +1,24 @@
+
+                int main(){
+                    boolean a;
+                    a = true;
+                    if (true){
+                        if (a == true){
+                            if (!a){
+                                a = false;
+                                boolean b[24];
+                                b[2] = a;
+                                a = b[b[24] != false];
+                            }
+                            else{
+                                boolean b;
+                                b = a;
+                            }
+                        }
+                        else{
+                            a = false;
+                        }
+                    }
+                    return 3;
+                }
+                

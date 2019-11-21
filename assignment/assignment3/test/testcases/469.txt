@@ -1,0 +1,11 @@
+
+                int a;
+                void print(string c) {
+                    return;
+                }
+                int main(){
+                    continue;
+                    do print("Hung"); break; while(true);
+                    return 32;
+                }
+                

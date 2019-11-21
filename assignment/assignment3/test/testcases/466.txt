@@ -1,0 +1,16 @@
+
+                int a;
+                void print(string c) {
+                    return;
+                }
+                int main(){
+                    do 
+                        print("Hung"); 
+                        if (a + 2%4 == 2) 
+                            a = 1; 
+                    while(true && false);
+                    {
+                        continue;
+                    }
+                }
+                

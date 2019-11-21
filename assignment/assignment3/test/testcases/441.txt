@@ -1,0 +1,20 @@
+
+                int a; 
+                float b;
+                string c;
+                boolean d;
+                int a1(int foo) {
+                    return 3214;
+                } 
+                boolean main() {
+                    a1(2);
+                    if (a <= b) {
+                        a = 2;
+                    }
+                    else {
+                        b = 3;
+                    }
+                    a <= false;   
+                    return (false && true);
+                }
+                

@@ -1,0 +1,15 @@
+
+                int hung(int a, float b[], string c) {
+                    return 23123;
+                }
+               void main(){
+                    float hunG[23];
+                    int a;
+                    a = a + 1;
+                    putInt(a);
+                    a = a* 1;
+                    hung(2, hunG, "32");
+                    (hunG[23] + 2) = 43;
+                    return;
+                }
+                

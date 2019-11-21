@@ -1,0 +1,16 @@
+
+               void main() {
+                    int a;
+                    a = 2;
+                    float b;
+                    string c;
+                    c = "Hung";
+                    b = -c;
+                    return;
+               }
+               int b() {
+                   int b;
+                   b = 2;
+                   return 3;
+               }
+                

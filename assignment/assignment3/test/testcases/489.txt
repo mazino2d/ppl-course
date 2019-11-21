@@ -1,0 +1,38 @@
+
+                float Power_n(float x, int n)
+                {
+                    float result;
+                    result = 1;
+                    do
+                    {
+                        n = n - 1;
+                        result = result * x;
+                    }while(n > 0);
+                    return result;
+                }
+                float qPower_n(float x, int n)
+                {
+                    float result;
+                    result = 1;
+                    do
+                    {
+                        if(n % 2 == 1)
+                        {
+                            result = result * x;
+                        }
+                        x = x * x;
+                        n = n / 2;
+                    }while(n != 0);
+                    return result;
+                }
+                int main()
+                {
+                    float x;
+                    x = 4;
+                    int n;
+                    n = 2;
+                    float z;
+                    z = qPower_n(x, n);
+                    return 23;
+                } 
+                

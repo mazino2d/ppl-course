@@ -1,1 +1,4 @@
-Program([FuncDecl(Id(main),[],VoidType,Block([BinaryOp(+,StringLiteral(a),StringLiteral(a))]))])
+int main() {
+                        foo();
+                        return 4;
+                    }

@@ -1,0 +1,16 @@
+
+               int a; 
+               float b;
+               string c;
+               boolean d;
+               int[] a1(int foo, int temp[]) {
+                   int hunG[32];
+                   hunG[foo] = 2;
+                   return temp;
+               } 
+               boolean main() {
+                   int hung[12];
+                   a1(33, hung) == 3.2;
+                   return (false && true);
+               }
+                

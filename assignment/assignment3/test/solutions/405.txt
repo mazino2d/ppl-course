@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(+,StringLiteral(a),StringLiteral(a))
+Undeclared Function: foo

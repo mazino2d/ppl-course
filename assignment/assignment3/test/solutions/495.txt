@@ -1,0 +1,1 @@
+Not Left Value: CallExpr(Id(npr),[Id(n),Id(r)])

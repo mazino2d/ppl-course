@@ -1,0 +1,30 @@
+
+                int main()
+                {
+                    int a, b, i, n;
+                    float x, S, T;
+                    float M;
+                    do
+                    {
+                        if(n < 1)
+                        {
+                            a + b - 3213;
+                        }
+                    }while(n < 1);
+                    S = 0;
+                    T = 1;
+                    M = 0;
+                    i = 1;
+
+                    do
+                    {
+                        T = T * x;
+                        M = M + i;
+                        S = S + T/M;
+                        i = i + 1;
+                        2 = i;
+                    }
+                    while(i <= n);
+                    return 0;
+                }
+                

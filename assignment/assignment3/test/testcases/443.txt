@@ -1,0 +1,22 @@
+
+                int i, j;
+                int main(){
+                    for (i = 1; -i < 10; i = i + 1)
+                    {
+                        for (j = 1; j < 200; j = j + 1)
+                        {
+                            if (i == j)
+                            {
+                                if (i == 0){
+                                    int d;
+                                    int e;
+                                    d >= e;
+                                    boolean t;
+                                    t = (d >= "3213");
+                                }
+                            }
+                        }   
+                    }
+                    return 23;
+                }
+                

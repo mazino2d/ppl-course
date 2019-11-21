@@ -1,0 +1,1 @@
+Type Mismatch In Expression: CallExpr(Id(TimSoNgayTrongThang),[IntLiteral(2),IntLiteral(21),IntLiteral(2)])

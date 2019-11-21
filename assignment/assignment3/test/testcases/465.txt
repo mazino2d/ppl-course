@@ -1,0 +1,30 @@
+
+                int a() {
+                    int b[24];
+                    b[2] = 4;
+                    return 4;
+                }
+
+                float main(){
+                    float b;
+                    a();
+                    {
+                        int i;
+                        float b;
+                        for (i = 0; i < b; i = i + 1) {
+                            if (true) i = 2;
+                            return 4;
+                        }
+                    }
+                    {
+                        int i;
+                        float b;
+                        for (i = 0; i < b; i = i + 1) {
+                            if (true) i = 2;
+                            return 4;
+                        }
+                        break;
+                    }
+                    return 2.4;
+                }
+                

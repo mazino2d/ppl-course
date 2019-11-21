@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(||,FloatLiteral(10.5),IntLiteral(10))
+Type Mismatch In Statement: If(BinaryOp(%,IntLiteral(2),IntLiteral(3)),Return(),Return())

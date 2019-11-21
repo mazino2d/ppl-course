@@ -1,0 +1,12 @@
+
+                int a, b, c, d, t;
+                void main1() {
+                    foo();
+                    return;
+                }
+                int foo () {
+                    main1();
+                    if (a+1 == 4) {{{{if(b+a == 2) foo();}}}} else {if (c+d == 32) a = 32; else a = 341;}
+                    return 23;
+                }
+                

@@ -1,0 +1,8 @@
+
+                float main1(){
+                    float b;
+                    boolean main;
+                    main = true;
+                    return 2.4;
+                }
+                

@@ -1,0 +1,18 @@
+
+                int a; 
+                float b;
+                string c;
+                boolean d;
+                int random(int foo) {
+                    return 3214;
+                } 
+                boolean main() {
+                    if (a <= b) {
+                        a = 2;
+                    }
+                    else {
+                        b = 3;
+                    }  
+                    return (false && true);
+                }
+                

@@ -1,0 +1,23 @@
+
+                int factorial(int n) {
+                    int f;
+
+                    for(f = 1; n > 1; n = n - 1)
+                        f = f*n;
+
+                    return f;
+                }
+
+                int npr(int n,int r) {
+                    return factorial(n)/factorial(n-r);
+                }
+
+                int main() {
+                    int n, r, result;
+
+                    n = 4;
+                    r = 3;
+                    npr(n, r) = result;
+                    return npr(n, r);
+                }
+                

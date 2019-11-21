@@ -1,0 +1,1 @@
+Type Mismatch In Expression: ArrayCell(BinaryOp(==,ArrayCell(Id(b),IntLiteral(2)),IntLiteral(4)),IntLiteral(2))

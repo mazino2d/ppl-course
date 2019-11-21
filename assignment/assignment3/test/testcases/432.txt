@@ -1,0 +1,15 @@
+
+                int main(){
+                    int hung[23];
+                    float d;
+                    int a, b;
+                    int c;
+                    c = a - b;
+                    c = c + a;
+                    if (c == 0)
+                        c = hung[d = 2.3];
+                    else 
+                        c = 3;
+                    return c;
+                }
+                

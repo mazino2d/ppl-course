@@ -1,0 +1,15 @@
+
+                void printf(string c, int d) {
+                    main1();
+                    return;
+                }
+                int main1() {
+                    int number;
+                    number = -2;
+                    if (number >= 0)
+                        printf("%d la so duong", number);
+                    else
+                        printf("%d la so am", number);
+                    return 0;
+                }
+                

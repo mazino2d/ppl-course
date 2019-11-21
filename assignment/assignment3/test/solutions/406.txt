@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(-,BooleanLiteral(true),StringLiteral(a))
+Undeclared Function: hung

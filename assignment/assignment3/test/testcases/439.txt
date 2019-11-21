@@ -1,0 +1,27 @@
+
+                void main(){
+                    boolean a;
+                    a = true;
+                    if (true){
+                        if (a == true){
+                            if (!a){
+                                a = false;
+                                boolean b;
+                                b = a;
+                            }
+                            else{
+                                boolean b;
+                                b = a;
+                            }
+                        }
+                        else{
+                            a = false;
+                            boolean c;
+                            (a != c);
+                            float d;
+                            d != 2.3;
+                        }
+                    }
+                    return;
+                }
+                

@@ -1,0 +1,21 @@
+
+                void printf(string c) {
+                    return c;
+                }
+                int main() {
+                    int n,i,j,k;
+
+                    k = 1;
+
+                    n = 5;
+
+                    printf("Ve tam giac Floyd: ");
+                    for(i = 1; i <= n; i = i + 1) {
+                        for(j=1;j <= i; j = j + 1)
+                            k = k + 1;
+                        printf("");
+                    }
+                    
+                    return 0;
+                }
+                

@@ -1,0 +1,55 @@
+
+                void printf(string c) {
+                    return ;
+                }
+                int main()
+                {
+                    int a, b, c; 
+
+                    printf("Nhap vao a = ");
+
+                    printf("Nhap vao b = ");
+
+                    printf("Nhap vao c = ");
+
+                    if (a == 0)
+                    {
+                        if (b == 0) 
+                        {
+                            if (c == 0)
+                            {
+                                printf("Phuong trinh co vo so nghiem");
+                            }
+                            else
+                            {
+                                printf("Phuong trinh vo nghiem");
+                            }
+                        }
+                        else
+                        {
+
+                            float x;
+                            x = -c/b;
+                            printf("Phuong trinh co nghiem duy nhat");
+                        }
+                    }
+                    else
+                    {
+                        float Denta;
+                        Denta = b * b - 4 * a * c;
+                        if (Denta < 0)
+                        {
+                            printf("Phuong trinh vo nghiem");
+                        }
+                        else 
+                        {
+                            float x1;
+                            x1 = (-b + sqrt(Denta)) / (2 * a);
+                            float x2;
+                            x2 = (-b - sqrt(Denta)) / (2 * a);
+                            printf("Phuong trinh co 2 nghiem phan biet");
+                        }
+                    }
+                    return 0;
+                }
+                

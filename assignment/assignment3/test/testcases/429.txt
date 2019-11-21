@@ -1,0 +1,7 @@
+
+                float main(){
+                    int a;
+                    float b;
+                    return;
+                }
+                

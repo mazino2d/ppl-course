@@ -1,0 +1,14 @@
+
+                int main1() {
+                    return 23;
+                }
+                int main()
+                {
+                    int i, n;
+                    int S;
+                    S = 0;
+                    for (i = 0; i < n; i = i + 1)
+                        S = S + i;
+                    return S;
+                }   
+                
