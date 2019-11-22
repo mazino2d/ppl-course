@@ -5,14 +5,11 @@ from AST import *
 class CheckSuite(unittest.TestCase):
     def test_redeclared_global_function(self):
         """Redeclared Global Function"""
-        input = """int a;
-                   int main(int foo) {
-                       return 3;
-                   } 
-                   boolean main() {
-                       return false;
+        input = """
+                   int main() {
+                       if(true) {return 1;}
                    }"""
-        expect = "Redeclared Function: main"
+        expect = ""
         self.assertTrue(TestChecker.test(input,expect,400))
 
     def test_redeclared_global_variable(self):
@@ -1930,6 +1927,7 @@ class CheckSuite(unittest.TestCase):
         """Factorial program """
         input = """
                 int func1(int n){
+                    int a;
                     if (n == 0)
                         return 1;
                     else
@@ -2168,19 +2166,13 @@ class CheckSuite(unittest.TestCase):
     def test_calimulj_program(self):
         """Calimulj Program """
         input = """
+                int foo(int a) {return 2;}
+                int x;
                 int main()
                 {
-                    int i, j;
-                    int result;
-                    for(i = 1; i <= 10; i = i + 1)
-                    {
-                        for(j = 2; j <= 9; j = j + 1)
-                        {
-                            result = i * j;
-                        }
-                    }
-                    break;
-                    return result;
+                    x = foo + 1;
+                    foo(2);
+                    return x;
                 }
                 """
         expect = "Break Not In Loop"
