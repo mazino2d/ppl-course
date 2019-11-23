@@ -1,20 +1,9 @@
 
-                int ass;
-                boolean a;
-                boolean ppl() {
-                    boolean isGood;
-                    isGood = false;
-                    return isGood;
-                }
-                int main(){
-                    int a, b, c;
-                    if (a - 3412 == 230)
-                        a = a + 1;
-                    a = a + b;
-                    2 == 3;
-                    b = 2;
-                    (a == 2) || (b != 3);
-                    (b == c) && (a == c);
-                    return 3;
-                }
-                
+        float main(){
+            int a,b,c,d;
+            for(1; true; 2) return a;
+            do 
+                return b;
+            while(!(a==b));
+        }
+        

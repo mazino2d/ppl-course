@@ -1,17 +1,11 @@
 
-                int a;
-                float b;
-                string c;
-                boolean d;
-                int hung() { return 2;}
-                void main() {
-                    a = 2;
-                    b = 32;
-                    c = "312414";
-                    d = true;
-                    hung();
-                    (a < b);
-                    (true < a);
-                    return;
-                }
-                
+        int a;
+        void main(){
+            a = 1;
+            if(true){
+                a = a+2;
+            }
+            else 
+                continue;
+        }   
+        

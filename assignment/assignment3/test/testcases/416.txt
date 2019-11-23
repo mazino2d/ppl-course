@@ -1,13 +1,11 @@
 
-                int x;
-                int a;
-                void main() {
-                    hunG();
-                    return;
-                }
-                int hunG() {
-                    boolean check;
-                    for (check = true ; x < 3 ; x = x + 1 ) a = a + 2 ;
-                    return x;
-                }
-                
+        void main(){
+            string a;
+            a = "Hello";
+            if (getString(a)){}
+            else {}
+        }
+        string getString(string a){
+            return a;
+        }
+        

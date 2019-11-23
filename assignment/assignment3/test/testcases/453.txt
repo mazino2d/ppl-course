@@ -1,13 +1,6 @@
 
-               void foo() {
-                    return;
-               }
-               int main() {
-                    foo();
-                    int a;
-                    float b;
-                    boolean d;
-                    a = -(d && true);
-                    return 4;
-                }
-                
+        void main(){
+            int a[5];
+            a[1.2] = 5;
+        }   
+        

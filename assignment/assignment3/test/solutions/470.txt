@@ -1,1 +1,1 @@
-No Entry Point
+Type Mismatch In Statement: If(Id(a),Block([BinaryOp(=,Id(a),BinaryOp(+,Id(a),IntLiteral(1)))]),BinaryOp(=,Id(b),BinaryOp(-,Id(b),Id(c))))

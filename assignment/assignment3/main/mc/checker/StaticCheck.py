@@ -2,6 +2,7 @@
 """
  * @author nhphung
 """
+
 from AST import * 
 from Visitor import *
 from Utils import Utils
@@ -63,7 +64,8 @@ class StaticChecker(BaseVisitor,Utils):
                 return_type= self.visit(decl.returnType,prog_envi)
                 param_type=[self.visit(param.varType,None) for param in decl.param]
                 fucntion = Symbol(decl.name.name,MType(param_type,return_type))
-                self.func_list.append(fucntion); prog_envi.append(fucntion)
+                if fucntion.name != 'main' : self.func_list.append(fucntion)
+                prog_envi.append(fucntion)
 
         # Search next node and raise another error
         self.func_call= None
@@ -73,7 +75,7 @@ class StaticChecker(BaseVisitor,Utils):
                 self.visitFuncDecl(decl,prog_envi)
 
         # Check unreachable function
-        if len(self.func_list) != 1:
+        if len(self.func_list) != 0:
             raise UnreachableFunction(self.func_list[0].name)        
 
     def visitVarDecl(self,ast,c):
@@ -139,11 +141,11 @@ class StaticChecker(BaseVisitor,Utils):
 
         for x in ast.sl:
             if isinstance(x,VarDecl):
-                block_envi+= [self.visit(x,block_envi)] 
+                block_envi += [self.visit(x,block_envi)] 
             elif isinstance(x,Expr):
                 self.visit(x,[block_envi]+c[0])
             else:
-                ref_block=[[block_envi]+c[0],c[1],c[2]]
+                ref_block=[[block_envi]+c[0],True,c[2]]
                 if self.visit(x,ref_block) == True : trigger = True
 
         return trigger
@@ -234,8 +236,11 @@ class StaticChecker(BaseVisitor,Utils):
         # Check Undeclared Function
         for lst in c:
             res = self.lookup(ast.method.name,lst,lambda x: x.name)
-        if res is None or not type(res.mtype) is MType:
+            if res != None : break
+        if res is None:
             raise Undeclared(Function(),ast.method.name)
+        if not type(res.mtype) is MType:
+            raise TypeMismatchInExpression(ast)
 
         
         if len(res.mtype.partype) != len(attr):
@@ -343,8 +348,8 @@ class StaticChecker(BaseVisitor,Utils):
                     raise TypeMismatchInExpression(ast)
             elif not isinstance(left,type(right)):
                 raise TypeMismatchInExpression(ast)
-            else:
-                return left
+            
+            return left
         
     def visitIntLiteral(self,ast, c): 
         return IntType()

@@ -1,17 +1,6 @@
 
-                int a;
-                string d;
-                int main(){
-                    do 
-                        d = "Hung"; 
-                        if (a + 2%4 == 2332) 
-                            a = 1; 
-                        do 
-                            d = "Hung"; 
-                            if (a + 2%4 == 2332) 
-                                a = 1; 
-                        while(a % 2);
-                    while(a < 2);
-                    return -323;
-                }
-                
+        void main(){
+            int a[25];
+            do {} while(a);
+        }
+        

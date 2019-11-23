@@ -1,21 +1,3 @@
 
-                int hung(int a, float b[], string c) {
-                    float d[23];
-                    hung(2, d, "hung");
-                    return 23123;
-                }
-               void main(){
-                    float c[23];
-                    hung(2, c, "32");
-                    int hung;
-                    if (true) {
-                        int a;
-                        a = 23;
-                        float c;
-                        c = 2;
-                        string d;
-                        d = "323";
-                        return;
-                    }
-                }
-                
+        void main(){int a; string b; a = 1 + b;}   
+        

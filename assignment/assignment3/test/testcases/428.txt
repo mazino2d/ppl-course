@@ -1,7 +1,7 @@
 
-                int[] main(int c){
-                    int a[2];
-                    float b;
-                    return c;
-                }
-                
+        void main(){
+            int i;
+            string a[25];
+            for (i = 1; a; i = i + 1){}
+        }
+        

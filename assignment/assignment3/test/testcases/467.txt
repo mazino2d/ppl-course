@@ -1,25 +1,9 @@
 
-                int a;
-                int b;
-                float c;
-                boolean d;
-                int main(){
-                    if (d = true) {
-                        return 3;
-                    }
-                    if (a == 1)
-                    {
-                        break;
-                        a = a + 1;
-                        b = 2;
-                        if (true)
-                            a = 1;
-                        else
-                            a = 2;
-                    }
-                    else {
-                        a = 4;                   
-                    }
-                    return 424;
-                }
-                
+        int a[12];
+        int func(int x){
+            return func(func(func(func(x))));
+        }
+        void main(){
+            a[2] = func(a[0]);
+        }
+        

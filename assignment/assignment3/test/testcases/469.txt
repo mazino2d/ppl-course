@@ -1,11 +1,7 @@
 
-                int a;
-                void print(string c) {
-                    return;
-                }
-                int main(){
-                    continue;
-                    do print("Hung"); break; while(true);
-                    return 32;
-                }
-                
+        void main(){
+            float a,b,c,d;
+            a = b+c+d;
+            a = b+c+d=d;
+        }
+        

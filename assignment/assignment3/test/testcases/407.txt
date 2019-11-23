@@ -1,12 +1,6 @@
-int a;
-                   float b;
-                   string c;
-                   boolean d;
-                   void main() {
-                       a = 2;
-                       b = 32;
-                       c = "312414";
-                       d = true;
-                       hung = 341;
-                       return;
-                   }
+
+        void main(int a, boolean b){}
+        int main2(int a, string b, float a){
+            return a;
+        }
+        

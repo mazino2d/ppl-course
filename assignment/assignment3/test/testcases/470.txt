@@ -1,25 +1,9 @@
 
-                int a;
-                float main;
-                void foo() {
-                    hunG();
-                    return;
-                }
-                int hunG(){
-                    foo();
-                    if (a == 1)
-                    {
-                        (2 == 3);
-                        a == 2;
-                        a = 2;
-                    }
-                    else
-                    {
-                       boolean b;
-                       b == true;
-                       float c;
-                       c == 2.3;
-                    }
-                    return 12;
-                }
-                
+        void main(){
+            float a,b,c,d;
+            if(a){
+                a = a+1;
+            }
+            else b = b-c;
+        }
+        

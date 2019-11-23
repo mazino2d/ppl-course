@@ -1,5 +1,6 @@
 
+        int foo;
         void main(){
-            do {} while(1);
+            foo[3];
         }
         

@@ -1,11 +1,6 @@
-int a; 
-                   float b;
-                   string c;
-                   boolean d;
-                   int a1(int foo) {
-                       return 3214;
-                   } 
-                   boolean main() {
-                       return (false && true);
-                   }
-                   string a;
+
+        int main1(){}
+        int main2(){}
+        int main3(){}
+        int main4(){}
+        

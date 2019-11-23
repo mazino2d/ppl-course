@@ -1,19 +1,6 @@
 
-                int hung(int a, float b, string c) {
-                    return 23123;
-                }
-               void main(){
-                    float a, b, c, x, y, z;
-                    a = 9;
-                    b = 12;
-                    c = 3;
-                    x = a - b / 3 + c * 2 - 1;
-                    y = a - b / (3 + c) * (2 - 1);
-                    z = a - ( b / (3 + c) * 2) - 1;
-                    putFloat(x);
-                    putFloat(y);
-                    putFloat(z);
-                    hung(2, 2, 2.3);
-                    return;
-                }
-                
+        void main(){
+            string a;
+            a[5] = 10;
+        }   
+        

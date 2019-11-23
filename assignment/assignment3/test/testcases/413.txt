@@ -1,21 +1,12 @@
 
-                int a;
-                int b;
-                float c;
-                boolean d;
-                int main(){
-                    if (a * 1)
-                    {
-                        a = a + 1;
-                        b = 2;
-                        if (true)
-                            a = 1;
-                        else
-                            a = 2;
-                    }
-                    else {
-                        a = 4;                   
-                    }
-                    return 424;
-                }
-                
+        int main(){
+            int a;
+            int b;
+            a = sum(a, b);
+            a = sub(a, b);
+            return a;
+        }
+        int sum(int a, int b){
+            return a + b;
+        }
+        

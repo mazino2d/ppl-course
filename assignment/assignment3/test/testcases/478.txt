@@ -1,24 +1,15 @@
 
-                int a;
-                float b;
-                string c;
-                boolean d;
-                int ksdo() {
-                    if (a == 1)
-                    {
-                        (2 == 3);
-                        a == 2;
-                        a = 2;
-                    }
-                    return 32;
-                }
-                void main() {
-                    int hung;
-                    a = 2;
-                    b = 32;
-                    c = "312414";
-                    d = true;
-                    hung = 341;
-                    return;
-                }
-                
+        boolean main(){
+            float a[5];
+            foo();
+            return true;
+        }
+        float[] foo(){
+            int a[5];
+            if(main()){
+                float a[4];
+                return a;
+            }
+            return a;
+        }
+        

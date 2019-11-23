@@ -1,22 +1,10 @@
 
-                int a;
-                int b;
-                float c;
-                boolean d;
-                int main(){
-                    if (a / 1 == 0)
-                    {
-                        continue;
-                        a = a + 1;
-                        b = 2;
-                        if (true)
-                            a = 1;
-                        else
-                            a = 2;
-                    }
-                    else {
-                        a = 4;                   
-                    }
-                    return 124;
-                }
-                
+        int[] func(int x){
+            int a[10];
+            return a;
+        }
+        void main(){
+            int x,a,b[5],c[9];
+            func(x+a)[x+b[1]*c[b[2]-a%b[c[6]%2]]]= b[func(b[1-c[5]])[x+c[b[c[4]]]]*c[b[4]-1]];
+        }
+        

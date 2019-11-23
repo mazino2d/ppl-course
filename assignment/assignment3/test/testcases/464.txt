@@ -1,20 +1,19 @@
 
-                int a;
-                string d;
-                int main(){
-                    {
-                        int a;
-                        if (true) {
-                            return 3;
-                        }
-                    }
-                    {
-                        int i;
-                        float b;
-                        for (i = 0; i < b; i = i + 1) {
-                            if (true) i = 2;
-                            return 4;
-                        }
-                    }
-                }
-                
+        int a[12];
+        float func(){
+            if(true){
+                return foo1();
+            }
+            else return a[2]+a[3]*foo1()-foo2(a[4]);
+        }
+        void main(){
+            float b;
+            b = func();
+        }
+        int foo1(){
+            return 1;
+        }
+        float foo2(int x){
+            return x;
+        }
+        

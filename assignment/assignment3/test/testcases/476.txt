@@ -1,25 +1,7 @@
 
-                int a;
-                string d;
-                void hunG() {
-                    hunG();
-                    return;
-                }
-                int main(){
-                    {
-                        int a;
-                        if (true) {
-                            return 3;
-                        }
-                    }
-                    {
-                        int i;
-                        float b;
-                        for (i = 0; i < b; i = i + 1) {
-                            if (true) i = 2;
-                            return 4;
-                        }
-                    }
-                    return 23;
-                }
-                
+        void main(){
+            float a,b,c,d;
+            a = b+c+d;
+            a = b-(c = d*(a = a-1));
+        }
+        

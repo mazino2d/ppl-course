@@ -1,5 +1,8 @@
 
-                int a;
-                float h,f;
-                string b, c[5];
-                
+        void main(){
+            int a,b,c;
+            string f[5];
+            f[0] = "hello";
+            f[1] = "hi";
+        }
+        

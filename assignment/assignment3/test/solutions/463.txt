@@ -1,1 +1,1 @@
-Function main Not Return 
+Type Mismatch In Expression: BinaryOp(=,ArrayCell(Id(a),IntLiteral(4)),CallExpr(Id(func),[]))

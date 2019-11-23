@@ -1,7 +1,6 @@
 
-                void main(){
-                    int a;
-                    float b;
-                    return 2;
-                }
-                
+        void main(){
+            int i;
+            for (i = 1; putLn(); i = i + 1){}
+        }
+        

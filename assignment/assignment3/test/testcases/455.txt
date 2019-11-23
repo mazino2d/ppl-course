@@ -1,13 +1,6 @@
 
-               int a; 
-               float b;
-               string c;
-               boolean d;
-               int a1(int foo) {
-                   return 3214;
-               } 
-               boolean main() {
-                   (a1(3) || false);
-                   return (false && true);
-               }
-                
+        void main(){
+            int a[5];
+            a[true] = 9;
+        }   
+        

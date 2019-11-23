@@ -1,23 +1,6 @@
 
-                int i;
-                int j;
-                boolean check;
-                int main(){
-                    for (i = 1; -i < 10; i = i + 1)
-                    {
-                        for (j = 1; j < 200; j = j + 1)
-                        {
-                            if (i == j)
-                            {
-                                int a;
-                                a = 3213;
-                                boolean b;
-                                b = true;
-                                i = j % 5;
-                                (j % (2.4));
-                            }
-                        }   
-                    }
-                    return 181299;
-                }
-                
+        int a[6],b[7],c[8];
+        void main(){
+            b[1] + 1 = c[7] + 10;
+        } 
+        

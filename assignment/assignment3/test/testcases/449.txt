@@ -1,19 +1,9 @@
 
-                int a, b, c;
-                int main(){
-                    if (a == 1)
-                    {
-                        a = a + 1;
-                        b = 2;
-                        if (true)
-                            a = 1;
-                        else
-                            a = 2;
-                    }
-                    else
-                        a = 4;
-                    (true || false);
-                    ((a == b) || (a != b) && (a = 2));
-                    return 18;
-                }
-                
+        int main(){
+            int b[5],c[5];
+            boolean a;
+            b[1] = c[2] = 5 + c[3];
+            return b[3];
+        }
+        
+        

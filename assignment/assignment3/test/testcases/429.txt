@@ -1,7 +1,14 @@
 
-                float main(){
-                    int a;
-                    float b;
-                    return;
-                }
-                
+        void main(){
+            int i;
+            int a;
+            int b;
+            for (i = 1; add(a, b) / sub(a, b); i = i + 1){}
+        }
+        int add(int a, int b){
+            return a + b;
+        }
+        int sub(int a, int b){
+            return a - b;
+        }
+        

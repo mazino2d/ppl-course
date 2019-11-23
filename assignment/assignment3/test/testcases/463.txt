@@ -1,16 +1,12 @@
 
-                int a;
-                string d;
-                int main(){
-                    do 
-                        d = "Hung"; 
-                        if (a + 2%4 == 2332) 
-                            a = 1; 
-                        do 
-                            d = "Hung"; 
-                            if (a + 2%4 == 2332) 
-                                a = 1; 
-                        while(a % 2 == 1);
-                    while(a < 2);
-                }
-                
+        int a[12];
+        float func(){
+            if(((1 == 2))){
+                return a[2];
+            }
+            else return a[2]+a[3];
+        }
+        void main(){
+            a[4] = func();
+        }
+        

@@ -1,16 +1,6 @@
 
-               void main() {
-                    int a;
-                    a = 2;
-                    float b;
-                    string c;
-                    c = "Hung";
-                    b = -c;
-                    return;
-               }
-               int b() {
-                   int b;
-                   b = 2;
-                   return 3;
-               }
-                
+        int a[6],b[7],c[8];
+        void main(){
+            a[1] = b[1] = c[7] + 10%5;
+        }   
+        

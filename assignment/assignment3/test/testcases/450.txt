@@ -1,19 +1,6 @@
 
-                int x;
-                int a;
-                boolean hung;
-                int e;
-                int main(){
-                    for (a = 1; a < 10; a=a+1){
-                        if (a + 123.4 - 241%a > 0){
-                            int d;
-                            d = e;
-                            boolean t;
-                            boolean e;
-                            t = e;
-                            t = !x;
-                        }
-                    }
-                    return 2;
-                }
-                
+        int a,b,c;
+        void main(){
+            a = b = c = (10+3)/4 + 5*9 - 2;
+        }   
+        

@@ -1,9 +1,6 @@
 
-               void main(){
-                    int a;
-                    float b;
-                    boolean c;
-                    c = !(b = 2.3);
-                    return;
-                }
-                
+        int a[6],b[7],c[8];
+        void main(){
+            a[1] = a[2] = a[4] + 10;
+        }   
+        

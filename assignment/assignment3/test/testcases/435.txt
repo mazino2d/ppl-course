@@ -1,14 +1,6 @@
 
-                int a() {
-                    int b[24];
-                    b[2] = 4;
-                    return 4;
-                }
-
-                float main(){
-                    float b;
-                    b = 2;
-                    b = false;
-                    return 2.4;
-                }
-                
+        
+        void main(){
+            break;
+        }   
+        

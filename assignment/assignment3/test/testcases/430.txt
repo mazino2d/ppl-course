@@ -1,13 +1,9 @@
 
-                int a() {
-                    int b[24];
-                    (b[2] == 4)[2] = 4;
-                    return 4;
-                }
-
-                float main(){
-                    float b;
-                    a();
-                    return 2.4;
-                }
-                
+        void main(){
+            float i;
+            for (i = 1; i < 10; i = i + 1){
+                if (i == 10)
+                    return;
+            }
+        }
+        

@@ -1,19 +1,9 @@
 
-                int a, b, c;
-                int main(){
-                    if (a == 1)
-                    {
-                        a = a + 1;
-                        b = 2;
-                        if (true)
-                            a = 1;
-                        else
-                            a = 2;
-                    }
-                    else
-                        a = 4;
-                    (true || false);
-                    (a || b);
-                    return 18;
-                }
-                
+        int a;
+        void main(){
+            a = 1;
+            if(true){
+                break;
+            }
+        }   
+        

@@ -1,15 +1,20 @@
 
-                int a;
-                int main(){
-                    for (a=1; a < 10; a=a+1){
-                        if (a == 0){
-                            int d;
-                            int e;
-                            d > e;
-                            boolean t;
-                            t = (d > false);
-                        }
-                    }
-                    return 32;
+        
+        void a(){
+            
+        }
+        void b(){}
+        void foo(){
+            { 
+                a();
+            }
+        }
+        
+        void main(){
+            {
+                {
+                    foo();
                 }
-                
+            }
+        }   
+        

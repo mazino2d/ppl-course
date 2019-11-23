@@ -1,1 +1,1 @@
-Break Not In Loop
+Type Mismatch In Expression: ArrayCell(Id(a),IntLiteral(2))
