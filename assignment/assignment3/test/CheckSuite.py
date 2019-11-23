@@ -1187,43 +1187,20 @@ class CheckSuite(unittest.TestCase):
         expect = "Not Left Value: IntLiteral(2)"
         self.assertTrue(TestChecker.test(input,expect,486))
     
-    def test_calnumofdayinmonth_program(self):
-        """Calnumofdayinmonth Program """
+    def test_function_cal_like_var(self):
         input = """
-                boolean KiemTraNamNhuan(int nam)
-                {
-                    return (nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0);
+                int foo(int n,int r) {
+                    return 1;
                 }
-                int TimSoNgayTrongThang(int thang, int nam)
-                {
-                    int NgayTrongThang;
-                    if (thang == 2)
-                    {
-                        boolean Check;
-                        Check = KiemTraNamNhuan(nam);
-                        if(Check == true)
-                        {
-                            NgayTrongThang = 29;
-                        }
-                        else
-                        {
-                            NgayTrongThang = 28;
-                        }
-                    }
-                    else
-                    {
-                        NgayTrongThang = 31;
-                    }
-                    return NgayTrongThang;
+
+                int main() {
+                    int a;
+                    a = foo + 10;
+                    foo(1,1);
+                    return 10;
                 }
-                int main()
-                {
-                    int result;
-                    result = TimSoNgayTrongThang(2, 21, 2);
-                    return 0;
-                } 
                 """
-        expect = "Type Mismatch In Expression: CallExpr(Id(TimSoNgayTrongThang),[IntLiteral(2),IntLiteral(21),IntLiteral(2)])"
+        expect = "Type Mismatch In Expression: BinaryOp(+,Id(foo),IntLiteral(10))"
         self.assertTrue(TestChecker.test(input,expect,487))
     
     def test_printVND_program(self):
@@ -1587,3 +1564,4 @@ class CheckSuite(unittest.TestCase):
                 """
         expect = "Type Mismatch In Expression: CallExpr(Id(foo),[])"
         self.assertTrue(TestChecker.test(input,expect,500))
+

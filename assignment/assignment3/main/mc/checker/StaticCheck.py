@@ -276,10 +276,7 @@ class StaticChecker(BaseVisitor,Utils):
         if res is None:
             raise Undeclared(Identifier(),ast.name)
         else:
-            if not type(res.mtype) is MType:
                 return res.mtype
-            else:
-                return res.mtype.rettype
 
     def visitArrayCell(self,ast,c):
         arr= self.visit(ast.arr,c)
