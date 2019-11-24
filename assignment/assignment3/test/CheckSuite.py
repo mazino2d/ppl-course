@@ -1187,20 +1187,12 @@ class CheckSuite(unittest.TestCase):
         expect = "Not Left Value: IntLiteral(2)"
         self.assertTrue(TestChecker.test(input,expect,486))
     
-    def test_function_cal_like_var(self):
+    def test_calnumofdayinmonth_program(self):
+        """Calnumofdayinmonth Program """
         input = """
-                int foo(int n,int r) {
-                    return 1;
-                }
-
-                int main() {
-                    int a;
-                    a = foo + 10;
-                    foo(1,1);
-                    return 10;
-                }
+               int main(){return 1;}
                 """
-        expect = "Type Mismatch In Expression: BinaryOp(+,Id(foo),IntLiteral(10))"
+        expect = ""
         self.assertTrue(TestChecker.test(input,expect,487))
     
     def test_printVND_program(self):
@@ -1564,4 +1556,3 @@ class CheckSuite(unittest.TestCase):
                 """
         expect = "Type Mismatch In Expression: CallExpr(Id(foo),[])"
         self.assertTrue(TestChecker.test(input,expect,500))
-
